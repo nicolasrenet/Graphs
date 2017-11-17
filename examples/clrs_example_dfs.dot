@@ -1,0 +1,16 @@
+Digraph {
+u [label="u"];
+v [label="v"];
+w [label="w"];
+x [label="x"];
+y [label="y"];
+z [label="z"];
+u--x;
+u--v;
+v--y;
+w--y;
+w--z;
+x--v;
+y--x;
+z--z;
+}

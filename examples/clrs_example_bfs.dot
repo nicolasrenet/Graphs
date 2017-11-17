@@ -1,0 +1,20 @@
+Graph {
+r  [label="r"];
+s  [label="s"];
+t  [label="t"];
+u  [label="u"];
+v  [label="v"];
+w  [label="w"];
+x  [label="x"];
+y  [label="y"];
+w--s[label="", penwidth=1];
+w--t[label="", penwidth=1];
+w--x[label="", penwidth=1];
+x--t[label="", penwidth=1];
+x--u[label="", penwidth=1];
+x--y[label="", penwidth=1];
+t--u[label="", penwidth=1];
+y--u[label="", penwidth=1];
+s--r[label="", penwidth=1];
+v--r[label="", penwidth=1];
+}
