@@ -1,0 +1,18 @@
+Graph {
+a [ label="a:0" ];
+b [ label="b:1" ];
+c [ label="c:1" ];
+d [ label="d:1" ];
+e [ label="e:2" ];
+f [ label="f:2" ];
+g [ label="g:2" ];
+h [ label="h:3" ];
+a--d[label="", penwidth=3];
+a--b[label="", penwidth=3];
+a--c[label="", penwidth=3];
+b--e[label="", penwidth=3];
+b--f[label="", penwidth=3];
+d--g[label="", penwidth=3];
+e--h[label="", penwidth=3];
+legend[label="Q=[]", color=white];
+}

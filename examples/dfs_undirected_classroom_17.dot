@@ -1,0 +1,17 @@
+Graph {
+a [ label="a:1:16" ];
+b [ label="b:2:15" ];
+c [ label="c:3:14" ];
+d [ label="d:4:13" ];
+e [ label="e:5:10" ];
+f [ label="f:11:12" ];
+g [ label="g:7:8" ];
+h [ label="h:6:9" ];
+a--b[label="", penwidth=3];
+b--c[label="", penwidth=3];
+c--d[label="", penwidth=3];
+d--e[label="", penwidth=3];
+d--f[label="", penwidth=3];
+e--h[label="", penwidth=3];
+h--g[label="", penwidth=3];
+}

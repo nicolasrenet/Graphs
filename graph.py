@@ -95,6 +95,10 @@ class Vertex():
 		if isinstance(other, Vertex):
 			return self.distance > other.distance
 		return NotImplemented
+
+	def __lt__(self, other):
+		if isinstance(other, Vertex):
+			return self.label < other.label
 	
 	def __str__(self):
 		return '({}:{} dist={} )'.format(self.label, self.distance, self.pi)
@@ -120,7 +124,7 @@ class Graph():
 		# in the order they were inserted, which is convenient for testing
 		self.V = clt.OrderedDict()
 
-		for label in v:
+		for label in sorted(v):
 			self.V[label] = Vertex( label ) 
 			
 		# List of adjacency lists:  list containg |V| lists
@@ -194,7 +198,7 @@ class Graph():
 		while queue:
 			u = queue.pop()
 			#print('Popping vertex {} with adjacency list: {}'.format(u.label, self.Adj[u]))
-			for v in self.Adj[ u ]:
+			for v in sorted( self.Adj[ u ], key=lambda x: x.label):
 				log("\tVisiting vertex {}".format(v.label),3)
 				
 				if v.color == Vertex.WHITE:
@@ -289,7 +293,7 @@ class Graph():
 			if file_prefix != '':
 				self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, blank=blank )
 
-			for v in self.Adj[ u ]:
+			for v in  sorted( self.Adj[ u ], key=lambda x: x.label):
 				if v.color == Vertex.WHITE:
 					v.pi = u
 					depth_first_visit( v, spacer+'\t' )
@@ -487,12 +491,17 @@ class Graph():
 				v.append( v_match.group(1) )
 			elif e_match:
 				v1,v2  = e_match.group(1), e_match.group(2)
+				if not directed and v1 > v2:
+					v2,v1 = v1,v2
 				weight=None
 				if e_match.lastindex==5:
 					e.append( ( v1, v2, int(e_match.group(4))))
 				else:
 					e.append( (v1, v2))
 		gf.close()			
+		
+		#sorted_edges = sorted( e, key=lambda x: x[0])
+		#print(sorted_edges)
 
 		return Graph( v, e, directed )
 		

@@ -1,0 +1,24 @@
+Digraph {
+a [ label="a:0" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+b [ label="b:1" style=filled fontname="time-bold" fillcolor=gray52 ];
+c [ label="c:INFTY" ];
+d [ label="d:1" style=filled fontname="time-bold" fillcolor=gray52 ];
+e [ label="e:INFTY" ];
+f [ label="f:INFTY" ];
+g [ label="g:INFTY" ];
+h [ label="h:INFTY" ];
+a->b[label="", penwidth=3];
+a->d[label="", penwidth=3];
+b->c[label="", penwidth=1];
+b->e[label="", penwidth=1];
+b->f[label="", penwidth=1];
+c->a[label="", penwidth=1];
+c->d[label="", penwidth=1];
+d->g[label="", penwidth=1];
+e->d[label="", penwidth=1];
+e->h[label="", penwidth=1];
+f->c[label="", penwidth=1];
+f->d[label="", penwidth=1];
+h->g[label="", penwidth=1];
+legend[label="Q=['d', 'b']", color=white];
+}

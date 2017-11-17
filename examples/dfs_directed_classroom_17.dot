@@ -1,0 +1,17 @@
+Digraph {
+a [ label="a:1:16" ];
+b [ label="b:2:15" ];
+c [ label="c:3:8" ];
+d [ label="d:4:7" ];
+e [ label="e:9:12" ];
+f [ label="f:13:14" ];
+g [ label="g:5:6" ];
+h [ label="h:10:11" ];
+a->b[label="", penwidth=3];
+b->c[label="", penwidth=3];
+b->e[label="", penwidth=3];
+b->f[label="", penwidth=3];
+c->d[label="", penwidth=3];
+d->g[label="", penwidth=3];
+e->h[label="", penwidth=3];
+}

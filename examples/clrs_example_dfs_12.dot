@@ -1,0 +1,16 @@
+Digraph {
+u [ label="u:1:8" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+v [ label="v:2:7" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+w [ label="w:9:12" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+x [ label="x:4:5" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+y [ label="y:3:6" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+z [ label="z:10:11" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+u->x[label="", penwidth=1];
+u->v[label="", penwidth=3];
+v->y[label="", penwidth=3];
+w->y[label="", penwidth=1];
+w->z[label="", penwidth=3];
+x->v[label="", penwidth=1];
+y->x[label="", penwidth=3];
+z->z[label="", penwidth=1];
+}

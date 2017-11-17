@@ -73,7 +73,7 @@ for d in range(0,len(diagrams)):
 	if d%layout == 0:
 		print('\\vspace{1em}\n\n')
 	else:
-		print('\\hfill')
+		print('\\vspace{1em}')
 	if d==len(diagrams)-1 and args.algorithm!='dijkstra' and not args.blank:
 		print('\\begin{{minipage}}{{{}\\linewidth}}'.format(ratio))
 		print('The resulting subgraph: ')
