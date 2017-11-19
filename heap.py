@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import unittest
+import sys
 
 class MaxHeap(object):
 	""" A heap-beased priority queue implementation. This is a generic priority queue structure:
@@ -47,6 +48,21 @@ class MaxHeap(object):
 			self.custom_type = True
 
 		self.build_heap()
+	
+	def list(self):
+		"""
+		Return a sorted list of the elements that are still in the heap.
+
+		:return: a sorted list of values
+		:rtype: list
+		"""
+		if self.is_empty():
+			print("empty queue!", file=sys.stderr)
+			return []
+		return sorted(self.array[:self.size])
+
+
+
 
 	def build_heap(self):
 		""" Build a heap from an array of primitive types, or custom objects.
@@ -170,8 +186,8 @@ class MaxHeap(object):
 			self.array[0] = tmp
 			self.size -= 1
 			self.heapify(0)
-			print('{}'.format(self)) 
-
+			#print('{}'.format(self)) 
+			
 
 	def _compare(self, a1, a2):
 		return a1 > a2

@@ -1,12 +1,12 @@
 Graph {
-a [ label="a:0" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-b [ label="b:1" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-c [ label="c:1" style=filled fontname="time-bold" fillcolor=gray52 ];
-d [ label="d:1" style=filled fontname="time-bold" fillcolor=gray52 ];
-e [ label="e:2" style=filled fontname="time-bold" fillcolor=gray52 ];
-f [ label="f:2" style=filled fontname="time-bold" fillcolor=gray52 ];
-g [ label="g:INFTY" ];
-h [ label="h:INFTY" ];
+a;
+b;
+c;
+d;
+e;
+f;
+g;
+h;
 a--d[label="", penwidth=3];
 a--b[label="", penwidth=3];
 a--c[label="", penwidth=3];
@@ -20,5 +20,5 @@ d--f[label="", penwidth=1];
 d--g[label="", penwidth=1];
 e--h[label="", penwidth=1];
 g--h[label="", penwidth=1];
-legend[label="Q=['f', 'e', 'd', 'c']", color=white];
+legend[label="Q=", color=white];
 }

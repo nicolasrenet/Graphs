@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  18 NOV 2017 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  19 NOV 2017 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**dijkstra_gross_yellen
+**dijkstra_gross_yellen.tex
 (./dijkstra_gross_yellen.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 2 languages loaded.
@@ -516,7 +516,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip55
 \backup@length=\skip56
 )
-(./dijkstra_gross_yellen.aux)
+No file dijkstra_gross_yellen.aux.
 \openout1 = `dijkstra_gross_yellen.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -531,7 +531,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
@@ -652,8 +651,8 @@ Overfull \hbox (21.79999pt too wide) in paragraph at lines 10--11
  []
 
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_0.eps>
-(epstopdf)                    date: 2017-11-18 15:09:40
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12767 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_0-eps-converted-to.p
 df>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_0-ep
@@ -664,18 +663,19 @@ stra_gross_yellen_0.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_0-eps-converted-to.p
 df>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 7191 bytes.
-<dijkstra_gross_yellen_0-eps-converted-to.pdf, id=4, 208.78pt x 568.1225pt>
+(epstopdf)                    date: 2017-11-19 15:16:01
+(epstopdf)                    size: 8236 bytes.
+
+<dijkstra_gross_yellen_0-eps-converted-to.pdf, id=4, 406.51875pt x 568.1225pt>
 File: dijkstra_gross_yellen_0-eps-converted-to.pdf Graphic file (type pdf)
 
 <use dijkstra_gross_yellen_0-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_0-eps-converted-to.pdf used on i
 nput line 16.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 155.14244pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_01.eps>
-(epstopdf)                    date: 2017-11-18 15:09:40
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12764 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_01-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_01-e
@@ -686,19 +686,18 @@ kstra_gross_yellen_01.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_01-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:01
+(epstopdf)                    size: 8238 bytes.
 
-<dijkstra_gross_yellen_01-eps-converted-to.pdf, id=5, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_01-eps-converted-to.pdf, id=5, 384.43625pt x 568.1225pt>
 File: dijkstra_gross_yellen_01-eps-converted-to.pdf Graphic file (type pdf)
-
 <use dijkstra_gross_yellen_01-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_01-eps-converted-to.pdf used on 
 input line 18.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 146.71495pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_02.eps>
-(epstopdf)                    date: 2017-11-18 15:09:40
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12759 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_02-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_02-e
@@ -709,19 +708,18 @@ kstra_gross_yellen_02.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_02-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:42
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:01
+(epstopdf)                    size: 8231 bytes.
 
-<dijkstra_gross_yellen_02-eps-converted-to.pdf, id=6, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_02-eps-converted-to.pdf, id=6, 362.35374pt x 568.1225pt>
 File: dijkstra_gross_yellen_02-eps-converted-to.pdf Graphic file (type pdf)
-
 <use dijkstra_gross_yellen_02-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_02-eps-converted-to.pdf used on 
 input line 20.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 138.28746pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_03.eps>
-(epstopdf)                    date: 2017-11-18 15:09:40
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12753 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_03-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_03-e
@@ -732,19 +730,18 @@ kstra_gross_yellen_03.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_03-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:42
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:01
+(epstopdf)                    size: 8227 bytes.
 
-<dijkstra_gross_yellen_03-eps-converted-to.pdf, id=7, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_03-eps-converted-to.pdf, id=7, 338.26375pt x 568.1225pt>
 File: dijkstra_gross_yellen_03-eps-converted-to.pdf Graphic file (type pdf)
-
 <use dijkstra_gross_yellen_03-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_03-eps-converted-to.pdf used on 
 input line 24.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 129.09383pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_04.eps>
-(epstopdf)                    date: 2017-11-18 15:09:40
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12746 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_04-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_04-e
@@ -755,19 +752,18 @@ kstra_gross_yellen_04.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_04-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:42
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:02
+(epstopdf)                    size: 8229 bytes.
 
-<dijkstra_gross_yellen_04-eps-converted-to.pdf, id=8, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_04-eps-converted-to.pdf, id=8, 312.16624pt x 568.1225pt>
 File: dijkstra_gross_yellen_04-eps-converted-to.pdf Graphic file (type pdf)
-
 <use dijkstra_gross_yellen_04-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_04-eps-converted-to.pdf used on 
 input line 26.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 119.13406pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_05.eps>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12740 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_05-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_05-e
@@ -778,24 +774,18 @@ kstra_gross_yellen_05.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_05-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:43
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:02
+(epstopdf)                    size: 8221 bytes.
 
-<dijkstra_gross_yellen_05-eps-converted-to.pdf, id=9, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_05-eps-converted-to.pdf, id=9, 290.08376pt x 568.1225pt>
 File: dijkstra_gross_yellen_05-eps-converted-to.pdf Graphic file (type pdf)
-
 <use dijkstra_gross_yellen_05-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_05-eps-converted-to.pdf used on 
 input line 28.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
- [1
-
-{/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./dijkstra_gross
-_yellen_0-eps-converted-to.pdf> <./dijkstra_gross_yellen_01-eps-converted-to.pd
-f> <./dijkstra_gross_yellen_02-eps-converted-to.pdf>]
+(pdftex.def)             Requested size: 110.70657pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_06.eps>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12737 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_06-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_06-e
@@ -806,19 +796,19 @@ kstra_gross_yellen_06.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_06-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:43
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:02
+(epstopdf)                    size: 8223 bytes.
 
-<dijkstra_gross_yellen_06-eps-converted-to.pdf, id=34, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_06-eps-converted-to.pdf, id=10, 263.98625pt x 568.1225pt
+>
 File: dijkstra_gross_yellen_06-eps-converted-to.pdf Graphic file (type pdf)
-
-<use dijkstra_gross_yellen_06-eps-converted-to.pdf>
+ <use dijkstra_gross_yellen_06-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_06-eps-converted-to.pdf used on 
 input line 32.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 100.74681pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_07.eps>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12730 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_07-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_07-e
@@ -829,19 +819,19 @@ kstra_gross_yellen_07.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_07-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:43
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:03
+(epstopdf)                    size: 8139 bytes.
 
-<dijkstra_gross_yellen_07-eps-converted-to.pdf, id=35, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_07-eps-converted-to.pdf, id=11, 239.89626pt x 568.1225pt
+>
 File: dijkstra_gross_yellen_07-eps-converted-to.pdf Graphic file (type pdf)
-
-<use dijkstra_gross_yellen_07-eps-converted-to.pdf>
+ <use dijkstra_gross_yellen_07-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_07-eps-converted-to.pdf used on 
 input line 34.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
+(pdftex.def)             Requested size: 91.55319pt x 216.8122pt.
 Package epstopdf Info: Source file: <dijkstra_gross_yellen_08.eps>
-(epstopdf)                    date: 2017-11-18 15:09:41
-(epstopdf)                    size: 12552 bytes
+(epstopdf)                    date: 2017-11-19 15:16:00
+(epstopdf)                    size: 12729 bytes
 (epstopdf)             Output file: <dijkstra_gross_yellen_08-eps-converted-to.
 pdf>
 (epstopdf)             Command: <repstopdf --outfile=dijkstra_gross_yellen_08-e
@@ -852,37 +842,42 @@ kstra_gross_yellen_08.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dijkstra_gross_yellen_08-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-11-18 15:09:43
-(epstopdf)                    size: 7191 bytes.
+(epstopdf)                    date: 2017-11-19 15:16:03
+(epstopdf)                    size: 7942 bytes.
 
-<dijkstra_gross_yellen_08-eps-converted-to.pdf, id=36, 208.78pt x 568.1225pt>
+<dijkstra_gross_yellen_08-eps-converted-to.pdf, id=12, 227.85126pt x 568.1225pt
+>
 File: dijkstra_gross_yellen_08-eps-converted-to.pdf Graphic file (type pdf)
-
-<use dijkstra_gross_yellen_08-eps-converted-to.pdf>
+ <use dijkstra_gross_yellen_08-eps-converted-to.pdf>
 Package pdftex.def Info: dijkstra_gross_yellen_08-eps-converted-to.pdf used on 
 input line 36.
-(pdftex.def)             Requested size: 164.24673pt x 446.96538pt.
- [2 <./dijkstra_gross_yellen_03-eps-converted-to.pdf> <./dijkstra_gross_yellen_
-04-eps-converted-to.pdf> <./dijkstra_gross_yellen_05-eps-converted-to.pdf>] [3 
-<./dijkstra_gross_yellen_06-eps-converted-to.pdf> <./dijkstra_gross_yellen_07-e
-ps-converted-to.pdf> <./dijkstra_gross_yellen_08-eps-converted-to.pdf>] (./dijk
-stra_gross_yellen.aux) ) 
+(pdftex.def)             Requested size: 86.95638pt x 216.8122pt.
+ [1
+
+{/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./dijkstra_gross
+_yellen_0-eps-converted-to.pdf> <./dijkstra_gross_yellen_01-eps-converted-to.pd
+f> <./dijkstra_gross_yellen_02-eps-converted-to.pdf> <./dijkstra_gross_yellen_0
+3-eps-converted-to.pdf> <./dijkstra_gross_yellen_04-eps-converted-to.pdf> <./di
+jkstra_gross_yellen_05-eps-converted-to.pdf>] [2 <./dijkstra_gross_yellen_06-ep
+s-converted-to.pdf> <./dijkstra_gross_yellen_07-eps-converted-to.pdf> <./dijkst
+ra_gross_yellen_08-eps-converted-to.pdf>] (./dijkstra_gross_yellen.aux) ) 
 Here is how much of TeX's memory you used:
- 14375 strings out of 495020
- 277463 string characters out of 6181324
- 313151 words of memory out of 5000000
+ 14373 strings out of 495020
+ 277411 string characters out of 6181324
+ 314151 words of memory out of 5000000
  17297 multiletter control sequences out of 15000+600000
  11272 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,6n,54p,434b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on dijkstra_gross_yellen.pdf (3 pages, 81734 bytes).
+ 55i,6n,54p,438b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+Output written on dijkstra_gross_yellen.pdf (2 pages, 88696 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

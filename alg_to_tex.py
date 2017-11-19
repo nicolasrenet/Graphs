@@ -11,6 +11,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument("dotfile", help="A graph-definition file, in DOT format", type=str)
 parser.add_argument("prefix", help="A file prefix", type=str)
 parser.add_argument("-l", "--layout", type=int, help="The number of figures to be packed on a same line of the page")
+parser.add_argument("-r", "--linewidth-ratio", type=float, help="The width taken by a single graph, as a ratio of the linewidth")
 parser.add_argument("-b", "--blank", help="Generate an exercise template, with blank value fields", action="store_true" )
 parser.add_argument("-s", "--standalone", help="Generate a self-contained LaTeX document, instead of inline LaTeX code", action="store_true" )
 parser.add_argument("-d", "--description-string", type=str, help="The description string to be used in the key box. Ex.  'CLRS3, Exercise 6.1-3'")
@@ -27,6 +28,7 @@ if args.layout is not None:
 
 g = Graph.from_dot( args.dotfile)
 
+os.system('rm -f {}[0-9]*'.format(args.prefix))
 
 if args.algorithm=='dfs':
 	g.depth_first( args.prefix, blank=args.blank )
@@ -61,7 +63,7 @@ preamble = """ \\documentclass{article}
 preamble +='\\title{{Graph Algorithms: {}}}'.format( algorithm_str )
 preamble += '\\begin{document}'
 preamble += '\\maketitle'
-
+preamble += '\\newcommand\\HR{\\rule{.5em}{.4pt}}'
 if args.standalone:
 	description_string = 'CLRS3, ' + ('DFS' if args.algorithm=='dfs' else 'BFS')
 	if args.description_string is not None:
@@ -84,14 +86,17 @@ for d in range(0,len(diagrams)):
 		print('\\vspace{1em}\n\n')
 	else:
 		print('\\vspace{1em}')
-	if d==len(diagrams)-1 and args.algorithm!='dijkstra' and not args.blank:
-		print('\\begin{{minipage}}{{{}\\linewidth}}'.format(ratio))
+	if d==len(diagrams)-1 and not args.blank:
+		print('\\HR')
+		print('\\begin{{minipage}}[b][.25\\textheight]{{{}\\linewidth}}'.format(ratio))
 		print('The resulting subgraph: ')
-		print('\\includegraphics[width=\\linewidth]{{{}}}'.format(diagrams[d] ))	
+		print('\\includegraphics[height=.25\\textheight]{{{}}}'.format(diagrams[d] ))	
 		print('\\end{minipage}')
 	else:
-
-		print('\\includegraphics[width={}\\linewidth]{{{}}}'.format(ratio, diagrams[d] ))	
+		if args.linewidth_ratio is not None:
+			print('\\includegraphics[width={}\\linewidth]{{{}}}'.format( args.linewidth_ratio, diagrams[d] ))	
+		else:
+			print('\\includegraphics[height=.3\\textheight]{{{}}}'.format(diagrams[d] ))	
 if args.standalone:
 	print('\n\\end{document}')
 

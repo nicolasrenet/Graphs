@@ -23,4 +23,5 @@ g->s[label="5", penwidth=1];
 s->a[label="5", penwidth=3];
 s->b[label="7", penwidth=3];
 s->e[label="3", penwidth=3];
+legend[label="minQ=['e', 'a', 'b', 'c', 'd', 'f', 'g']", color=white];
 }

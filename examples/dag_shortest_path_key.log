@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  18 NOV 2017 22:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  19 NOV 2017 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**dag_shortest_path_key
+**dag_shortest_path_key.tex
 (./dag_shortest_path_key.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 2 languages loaded.
@@ -516,7 +516,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip55
 \backup@length=\skip56
 )
-(./dag_shortest_path_key.aux)
+No file dag_shortest_path_key.aux.
 \openout1 = `dag_shortest_path_key.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -531,7 +531,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
@@ -652,7 +651,7 @@ Overfull \hbox (21.79999pt too wide) in paragraph at lines 10--11
  []
 
 Package epstopdf Info: Source file: <dag_shortest_path_00.eps>
-(epstopdf)                    date: 2017-11-18 22:49:34
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9493 bytes
 (epstopdf)             Output file: <dag_shortest_path_00-eps-converted-to.pdf>
 
@@ -664,7 +663,7 @@ rtest_path_00.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_00-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:50
 (epstopdf)                    size: 6768 bytes.
 <dag_shortest_path_00-eps-converted-to.pdf, id=4, 180.675pt x 480.79625pt>
 File: dag_shortest_path_00-eps-converted-to.pdf Graphic file (type pdf)
@@ -672,9 +671,9 @@ File: dag_shortest_path_00-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_00-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_00-eps-converted-to.pdf used on inpu
 t line 16.
-(pdftex.def)             Requested size: 98.55301pt x 262.25984pt.
+(pdftex.def)             Requested size: 81.4739pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_01.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9552 bytes
 (epstopdf)             Output file: <dag_shortest_path_01-eps-converted-to.pdf>
 
@@ -686,7 +685,7 @@ rtest_path_01.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_01-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:50
 (epstopdf)                    size: 7945 bytes.
 
 <dag_shortest_path_01-eps-converted-to.pdf, id=5, 180.675pt x 480.79625pt>
@@ -695,9 +694,9 @@ File: dag_shortest_path_01-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_01-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_01-eps-converted-to.pdf used on inpu
 t line 18.
-(pdftex.def)             Requested size: 98.55301pt x 262.25984pt.
+(pdftex.def)             Requested size: 81.4739pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_02.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9421 bytes
 (epstopdf)             Output file: <dag_shortest_path_02-eps-converted-to.pdf>
 
@@ -709,7 +708,7 @@ rtest_path_02.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_02-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:36
+(epstopdf)                    date: 2017-11-19 16:14:50
 (epstopdf)                    size: 7963 bytes.
 
 <dag_shortest_path_02-eps-converted-to.pdf, id=6, 150.5625pt x 480.79625pt>
@@ -718,9 +717,9 @@ File: dag_shortest_path_02-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_02-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_02-eps-converted-to.pdf used on inpu
 t line 20.
-(pdftex.def)             Requested size: 98.55301pt x 314.72209pt.
+(pdftex.def)             Requested size: 67.89493pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_03.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9458 bytes
 (epstopdf)             Output file: <dag_shortest_path_03-eps-converted-to.pdf>
 
@@ -732,7 +731,7 @@ rtest_path_03.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_03-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:36
+(epstopdf)                    date: 2017-11-19 16:14:51
 (epstopdf)                    size: 7559 bytes.
 
 <dag_shortest_path_03-eps-converted-to.pdf, id=7, 131.49126pt x 480.79625pt>
@@ -741,9 +740,9 @@ File: dag_shortest_path_03-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_03-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_03-eps-converted-to.pdf used on inpu
 t line 22.
-(pdftex.def)             Requested size: 98.55301pt x 360.36887pt.
+(pdftex.def)             Requested size: 59.2949pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_04.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9510 bytes
 (epstopdf)             Output file: <dag_shortest_path_04-eps-converted-to.pdf>
 
@@ -755,7 +754,7 @@ rtest_path_04.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_04-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:36
+(epstopdf)                    date: 2017-11-19 16:14:51
 (epstopdf)                    size: 7623 bytes.
 
 <dag_shortest_path_04-eps-converted-to.pdf, id=8, 131.49126pt x 480.79625pt>
@@ -764,9 +763,9 @@ File: dag_shortest_path_04-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_04-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_04-eps-converted-to.pdf used on inpu
 t line 24.
-(pdftex.def)             Requested size: 98.55301pt x 360.36887pt.
+(pdftex.def)             Requested size: 59.2949pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_05.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9562 bytes
 (epstopdf)             Output file: <dag_shortest_path_05-eps-converted-to.pdf>
 
@@ -778,7 +777,7 @@ rtest_path_05.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_05-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:37
+(epstopdf)                    date: 2017-11-19 16:14:51
 (epstopdf)                    size: 7663 bytes.
 
 <dag_shortest_path_05-eps-converted-to.pdf, id=9, 131.49126pt x 480.79625pt>
@@ -787,9 +786,9 @@ File: dag_shortest_path_05-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_05-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_05-eps-converted-to.pdf used on inpu
 t line 28.
-(pdftex.def)             Requested size: 98.55301pt x 360.36887pt.
+(pdftex.def)             Requested size: 59.2949pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_06.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 9611 bytes
 (epstopdf)             Output file: <dag_shortest_path_06-eps-converted-to.pdf>
 
@@ -801,7 +800,7 @@ rtest_path_06.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_06-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:37
+(epstopdf)                    date: 2017-11-19 16:14:52
 (epstopdf)                    size: 7572 bytes.
 
 <dag_shortest_path_06-eps-converted-to.pdf, id=10, 131.49126pt x 480.79625pt>
@@ -810,21 +809,21 @@ File: dag_shortest_path_06-eps-converted-to.pdf Graphic file (type pdf)
 <use dag_shortest_path_06-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_06-eps-converted-to.pdf used on inpu
 t line 30.
-(pdftex.def)             Requested size: 98.55301pt x 360.36887pt.
+(pdftex.def)             Requested size: 59.2949pt x 216.8122pt.
 Package epstopdf Info: Source file: <dag_shortest_path_07.eps>
-(epstopdf)                    date: 2017-11-18 22:49:35
+(epstopdf)                    date: 2017-11-19 16:14:49
 (epstopdf)                    size: 6808 bytes
 (epstopdf)             Output file: <dag_shortest_path_07-eps-converted-to.pdf>
 
 (epstopdf)             Command: <repstopdf --outfile=dag_shortest_path_07-eps-c
 onverted-to.pdf dag_shortest_path_07.eps>
-(epstopdf)             \includegraphics on input line 34.
+(epstopdf)             \includegraphics on input line 35.
 runsystem(repstopdf --outfile=dag_shortest_path_07-eps-converted-to.pdf dag_sho
 rtest_path_07.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <dag_shortest_path_07-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2017-11-18 22:49:37
+(epstopdf)                    date: 2017-11-19 16:14:52
 (epstopdf)                    size: 6138 bytes.
 
 <dag_shortest_path_07-eps-converted-to.pdf, id=11, 210.7875pt x 306.14375pt>
@@ -832,16 +831,21 @@ File: dag_shortest_path_07-eps-converted-to.pdf Graphic file (type pdf)
 
 <use dag_shortest_path_07-eps-converted-to.pdf>
 Package pdftex.def Info: dag_shortest_path_07-eps-converted-to.pdf used on inpu
-t line 34.
-(pdftex.def)             Requested size: 98.55301pt x 143.14015pt.
+t line 35.
+(pdftex.def)             Requested size: 124.39893pt x 180.67499pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 []\OT1/cmr/m/n/10 The re-sult-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 \OT1/cmr/m/n/10 ing sub-graph:
+ []
+
+
+Overfull \hbox (25.84592pt too wide) in paragraph at lines 34--36
+[] 
  []
 
 [1
@@ -849,26 +853,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 {/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./dag_shortest_p
 ath_00-eps-converted-to.pdf> <./dag_shortest_path_01-eps-converted-to.pdf> <./d
 ag_shortest_path_02-eps-converted-to.pdf> <./dag_shortest_path_03-eps-converted
--to.pdf> <./dag_shortest_path_04-eps-converted-to.pdf>] [2 <./dag_shortest_path
-_05-eps-converted-to.pdf> <./dag_shortest_path_06-eps-converted-to.pdf> <./dag_
-shortest_path_07-eps-converted-to.pdf>] (./dag_shortest_path_key.aux) ) 
+-to.pdf> <./dag_shortest_path_04-eps-converted-to.pdf> <./dag_shortest_path_05-
+eps-converted-to.pdf> <./dag_shortest_path_06-eps-converted-to.pdf> <./dag_shor
+test_path_07-eps-converted-to.pdf>] (./dag_shortest_path_key.aux) ) 
 Here is how much of TeX's memory you used:
- 14370 strings out of 495020
- 277081 string characters out of 6181324
+ 14369 strings out of 495020
+ 277031 string characters out of 6181324
  314146 words of memory out of 5000000
- 17293 multiletter control sequences out of 15000+600000
+ 17294 multiletter control sequences out of 15000+600000
  11272 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,6n,54p,434b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on dag_shortest_path_key.pdf (2 pages, 78963 bytes).
+ 55i,6n,54p,438b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsl10.pfb>
+Output written on dag_shortest_path_key.pdf (1 page, 78533 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

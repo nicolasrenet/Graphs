@@ -2,7 +2,7 @@
 %%Creator: graphviz version 2.38.0 (20140413.2041)
 %%Title: %3
 %%Pages: 1
-%%BoundingBox: 36 36 244 602
+%%BoundingBox: 36 36 347 602
 %%EndComments
 save
 %%BeginProlog
@@ -179,11 +179,11 @@ def
 %%EndSetup
 setupLatin1
 %%Page: 1 1
-%%PageBoundingBox: 36 36 244 602
+%%PageBoundingBox: 36 36 347 602
 %%PageOrientation: Portrait
 0 0 1 beginpage
 gsave
-36 36 208 566 boxprim clip newpath
+36 36 311 566 boxprim clip newpath
 1 1 set_scale 0 rotate 40 40 translate
 % a
 gsave
@@ -231,12 +231,15 @@ closepath stroke
 grestore
 % b
 gsave
+0 0 0 nodecolor
+53 279 27 18 ellipse_path fill
 1 setlinewidth
+filled
 0 0 0 nodecolor
 53 279 27 18 ellipse_path stroke
-0 0 0 nodecolor
-14 /Times-Roman set_font
-44 275.3 moveto 18 (b:7) alignedtext
+0 0 1 nodecolor
+14 /time-bold set_font
+42 275.3 moveto 22 (b:7) alignedtext
 grestore
 % c
 gsave
@@ -305,15 +308,12 @@ closepath stroke
 grestore
 % d
 gsave
-0 0 0 nodecolor
-144 18 27 18 ellipse_path fill
 1 setlinewidth
-filled
 0 0 0 nodecolor
 144 18 27 18 ellipse_path stroke
-0 0 1 nodecolor
-14 /time-bold set_font
-133 14.3 moveto 22 (d:7) alignedtext
+0 0 0 nodecolor
+14 /Times-Roman set_font
+135 14.3 moveto 18 (d:7) alignedtext
 grestore
 % c->d
 gsave
@@ -645,6 +645,15 @@ closepath stroke
 0 0 0 edgecolor
 14 /Times-Roman set_font
 98 318.8 moveto 7 (3) alignedtext
+grestore
+% legend
+gsave
+1 setlinewidth
+0 0 1 nodecolor
+219 540 84.49 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+162 536.3 moveto 114 (minQ=['c', 'd', 'g', 'f']) alignedtext
 grestore
 endpage
 showpage

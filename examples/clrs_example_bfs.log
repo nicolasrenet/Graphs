@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  18 NOV 2017 22:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  19 NOV 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**clrs_example_bfs
+**clrs_example_bfs.tex
 (./clrs_example_bfs.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 2 languages loaded.
@@ -516,7 +516,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip55
 \backup@length=\skip56
 )
-(./clrs_example_bfs.aux)
+No file clrs_example_bfs.aux.
 \openout1 = `clrs_example_bfs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -531,7 +531,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
@@ -652,7 +651,7 @@ Overfull \hbox (21.79999pt too wide) in paragraph at lines 10--11
  []
 
 Package epstopdf Info: Source file: <clrs_example_bfs_0.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_0-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_0-eps-con
@@ -662,7 +661,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_0-eps-converted-to.pdf clrs_exam
 ple_bfs_0.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_0-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:24
 (epstopdf)                    size: 5573 bytes.
 <clrs_example_bfs_0-eps-converted-to.pdf, id=4, 233.87375pt x 333.245pt>
 File: clrs_example_bfs_0-eps-converted-to.pdf Graphic file (type pdf)
@@ -670,9 +669,9 @@ File: clrs_example_bfs_0-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_0-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_0-eps-converted-to.pdf used on input 
 line 16.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_01.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_01-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_01-eps-co
@@ -682,7 +681,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_01-eps-converted-to.pdf clrs_exa
 mple_bfs_01.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_01-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:39
+(epstopdf)                    date: 2017-11-19 15:14:24
 (epstopdf)                    size: 5576 bytes.
 
 <clrs_example_bfs_01-eps-converted-to.pdf, id=5, 233.87375pt x 333.245pt>
@@ -691,9 +690,9 @@ File: clrs_example_bfs_01-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_01-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_01-eps-converted-to.pdf used on input
  line 18.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_02.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_02-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_02-eps-co
@@ -703,7 +702,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_02-eps-converted-to.pdf clrs_exa
 mple_bfs_02.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_02-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:39
+(epstopdf)                    date: 2017-11-19 15:14:25
 (epstopdf)                    size: 5579 bytes.
 
 <clrs_example_bfs_02-eps-converted-to.pdf, id=6, 233.87375pt x 333.245pt>
@@ -712,19 +711,19 @@ File: clrs_example_bfs_02-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_02-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_02-eps-converted-to.pdf used on input
  line 20.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_03.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_03-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_03-eps-co
 nverted-to.pdf clrs_example_bfs_03.eps>
-(epstopdf)             \includegraphics on input line 22.
+(epstopdf)             \includegraphics on input line 24.
 runsystem(repstopdf --outfile=clrs_example_bfs_03-eps-converted-to.pdf clrs_exa
 mple_bfs_03.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_03-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:39
+(epstopdf)                    date: 2017-11-19 15:14:25
 (epstopdf)                    size: 5583 bytes.
 
 <clrs_example_bfs_03-eps-converted-to.pdf, id=7, 233.87375pt x 333.245pt>
@@ -732,10 +731,10 @@ File: clrs_example_bfs_03-eps-converted-to.pdf Graphic file (type pdf)
 
 <use clrs_example_bfs_03-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_03-eps-converted-to.pdf used on input
- line 22.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+ line 24.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_04.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_04-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_04-eps-co
@@ -745,7 +744,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_04-eps-converted-to.pdf clrs_exa
 mple_bfs_04.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_04-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:39
+(epstopdf)                    date: 2017-11-19 15:14:25
 (epstopdf)                    size: 5583 bytes.
 
 <clrs_example_bfs_04-eps-converted-to.pdf, id=8, 233.87375pt x 333.245pt>
@@ -754,9 +753,9 @@ File: clrs_example_bfs_04-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_04-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_04-eps-converted-to.pdf used on input
  line 26.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_05.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_05-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_05-eps-co
@@ -766,7 +765,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_05-eps-converted-to.pdf clrs_exa
 mple_bfs_05.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_05-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:40
+(epstopdf)                    date: 2017-11-19 15:14:25
 (epstopdf)                    size: 5584 bytes.
 
 <clrs_example_bfs_05-eps-converted-to.pdf, id=9, 233.87375pt x 333.245pt>
@@ -775,19 +774,19 @@ File: clrs_example_bfs_05-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_05-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_05-eps-converted-to.pdf used on input
  line 28.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_06.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_06-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_06-eps-co
 nverted-to.pdf clrs_example_bfs_06.eps>
-(epstopdf)             \includegraphics on input line 30.
+(epstopdf)             \includegraphics on input line 32.
 runsystem(repstopdf --outfile=clrs_example_bfs_06-eps-converted-to.pdf clrs_exa
 mple_bfs_06.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_06-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:40
+(epstopdf)                    date: 2017-11-19 15:14:26
 (epstopdf)                    size: 5584 bytes.
 
 <clrs_example_bfs_06-eps-converted-to.pdf, id=10, 233.87375pt x 333.245pt>
@@ -795,20 +794,20 @@ File: clrs_example_bfs_06-eps-converted-to.pdf Graphic file (type pdf)
 
 <use clrs_example_bfs_06-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_06-eps-converted-to.pdf used on input
- line 30.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+ line 32.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_07.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_07-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_07-eps-co
 nverted-to.pdf clrs_example_bfs_07.eps>
-(epstopdf)             \includegraphics on input line 32.
+(epstopdf)             \includegraphics on input line 34.
 runsystem(repstopdf --outfile=clrs_example_bfs_07-eps-converted-to.pdf clrs_exa
 mple_bfs_07.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_07-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:40
+(epstopdf)                    date: 2017-11-19 15:14:26
 (epstopdf)                    size: 5584 bytes.
 
 <clrs_example_bfs_07-eps-converted-to.pdf, id=11, 233.87375pt x 333.245pt>
@@ -816,10 +815,10 @@ File: clrs_example_bfs_07-eps-converted-to.pdf Graphic file (type pdf)
 
 <use clrs_example_bfs_07-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_07-eps-converted-to.pdf used on input
- line 32.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+ line 34.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
 Package epstopdf Info: Source file: <clrs_example_bfs_08.eps>
-(epstopdf)                    date: 2017-11-18 22:11:38
+(epstopdf)                    date: 2017-11-19 15:14:23
 (epstopdf)                    size: 6837 bytes
 (epstopdf)             Output file: <clrs_example_bfs_08-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=clrs_example_bfs_08-eps-co
@@ -829,7 +828,7 @@ runsystem(repstopdf --outfile=clrs_example_bfs_08-eps-converted-to.pdf clrs_exa
 mple_bfs_08.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <clrs_example_bfs_08-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:41
+(epstopdf)                    date: 2017-11-19 15:14:26
 (epstopdf)                    size: 5584 bytes.
 
 <clrs_example_bfs_08-eps-converted-to.pdf, id=12, 233.87375pt x 333.245pt>
@@ -838,30 +837,29 @@ File: clrs_example_bfs_08-eps-converted-to.pdf Graphic file (type pdf)
 <use clrs_example_bfs_08-eps-converted-to.pdf>
 Package pdftex.def Info: clrs_example_bfs_08-eps-converted-to.pdf used on input
  line 36.
-(pdftex.def)             Requested size: 123.19125pt x 175.53592pt.
+(pdftex.def)             Requested size: 152.16243pt x 216.8122pt.
  [1
 
 {/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./clrs_example_b
 fs_0-eps-converted-to.pdf> <./clrs_example_bfs_01-eps-converted-to.pdf> <./clrs
 _example_bfs_02-eps-converted-to.pdf> <./clrs_example_bfs_03-eps-converted-to.p
 df> <./clrs_example_bfs_04-eps-converted-to.pdf> <./clrs_example_bfs_05-eps-con
-verted-to.pdf> <./clrs_example_bfs_06-eps-converted-to.pdf> <./clrs_example_bfs
-_07-eps-converted-to.pdf>]
-[2 <./clrs_example_bfs_08-eps-converted-to.pdf>] (./clrs_example_bfs.aux) ) 
+verted-to.pdf>] [2 <./clrs_example_bfs_06-eps-converted-to.pdf> <./clrs_example
+_bfs_07-eps-converted-to.pdf> <./clrs_example_bfs_08-eps-converted-to.pdf>] (./
+clrs_example_bfs.aux) ) 
 Here is how much of TeX's memory you used:
- 14375 strings out of 495020
- 277193 string characters out of 6181324
+ 14373 strings out of 495020
+ 277151 string characters out of 6181324
  314149 words of memory out of 5000000
  17297 multiletter control sequences out of 15000+600000
  11272 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,6n,54p,429b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
-</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-Output written on clrs_example_bfs.pdf (2 pages, 68740 bytes).
+ 55i,6n,54p,433b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+Output written on clrs_example_bfs.pdf (2 pages, 68760 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

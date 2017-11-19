@@ -1,12 +1,12 @@
 Graph {
-a [ label="a:0" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-b [ label="b:1" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-c [ label="c:1" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-d [ label="d:1" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-e [ label="e:2" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-f [ label="f:2" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-g [ label="g:2" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-h [ label="h:3" style=filled fontname="time-bold" fillcolor=gray52 ];
+a;
+b;
+c;
+d;
+e;
+f;
+g;
+h;
 a--d[label="", penwidth=3];
 a--b[label="", penwidth=3];
 a--c[label="", penwidth=3];
@@ -20,5 +20,5 @@ d--f[label="", penwidth=1];
 d--g[label="", penwidth=3];
 e--h[label="", penwidth=3];
 g--h[label="", penwidth=1];
-legend[label="Q=['h']", color=white];
+legend[label="Q=", color=white];
 }

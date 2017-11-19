@@ -1,8 +1,8 @@
 Digraph {
 a [ label="a:4" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
-b [ label="b:7" ];
+b [ label="b:7" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
 c [ label="c:7" ];
-d [ label="d:7" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
+d [ label="d:7" ];
 e [ label="e:3" fontcolor=white style=filled fontname="time-bold" fillcolor=black ];
 f [ label="f:15" ];
 g [ label="g:8" ];
@@ -23,4 +23,5 @@ g->s[label="5", penwidth=1];
 s->a[label="5", penwidth=1];
 s->b[label="7", penwidth=3];
 s->e[label="3", penwidth=3];
+legend[label="minQ=['c', 'd', 'g', 'f']", color=white];
 }

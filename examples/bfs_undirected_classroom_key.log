@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  18 NOV 2017 22:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  19 NOV 2017 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**bfs_undirected_classroom_key
+**bfs_undirected_classroom_key.tex
 (./bfs_undirected_classroom_key.tex
 LaTeX2e <2014/05/01>
 Babel <3.9l> and hyphenation patterns for 2 languages loaded.
@@ -516,7 +516,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip55
 \backup@length=\skip56
 )
-(./bfs_undirected_classroom_key.aux)
+No file bfs_undirected_classroom_key.aux.
 \openout1 = `bfs_undirected_classroom_key.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -531,7 +531,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count138
@@ -651,266 +650,287 @@ Overfull \hbox (21.79999pt too wide) in paragraph at lines 10--11
 [][] 
  []
 
-Package epstopdf Info: Source file: <bfs_undirected_classroom_0.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_0.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7585 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_0-eps-converted-t
-o.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
--eps-converted-to.pdf bfs_undirected_classroom_0.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_0-eps-convert
+ed-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_0-eps-converted-to.pdf bfs_undirected_classroom_key_0.eps>
 (epstopdf)             \includegraphics on input line 16.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_0-eps-converted-to.pdf b
-fs_undirected_classroom_0.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_0-eps-converted-to.p
+df bfs_undirected_classroom_key_0.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_0-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:29
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_0-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:22
 (epstopdf)                    size: 7930 bytes.
 
-<bfs_undirected_classroom_0-eps-converted-to.pdf, id=4, 326.21875pt x 405.515pt
->
-File: bfs_undirected_classroom_0-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_0-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_0-eps-converted-to.pdf used o
-n input line 16.
-(pdftex.def)             Requested size: 123.19125pt x 153.1382pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_01.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_0-eps-converted-to.pdf, id=4, 326.21875pt x 405.5
+15pt>
+File: bfs_undirected_classroom_key_0-eps-converted-to.pdf Graphic file (type pd
+f)
+ <use bfs_undirected_classroom_key_0-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_0-eps-converted-to.pdf us
+ed on input line 16.
+(pdftex.def)             Requested size: 174.41827pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_01.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7714 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_01-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-1-eps-converted-to.pdf bfs_undirected_classroom_01.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_01-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_01-eps-converted-to.pdf bfs_undirected_classroom_key_01.eps>
 (epstopdf)             \includegraphics on input line 18.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_01-eps-converted-to.pdf 
-bfs_undirected_classroom_01.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_01-eps-converted-to.
+pdf bfs_undirected_classroom_key_01.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_01-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:30
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_01-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:22
 (epstopdf)                    size: 8163 bytes.
 
-<bfs_undirected_classroom_01-eps-converted-to.pdf, id=5, 374.39874pt x 405.515p
-t>
-File: bfs_undirected_classroom_01-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_01-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_01-eps-converted-to.pdf used 
-on input line 18.
-(pdftex.def)             Requested size: 123.19125pt x 133.43053pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_02.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_01-eps-converted-to.pdf, id=5, 374.39874pt x 405.
+515pt>
+File: bfs_undirected_classroom_key_01-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_01-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_01-eps-converted-to.pdf u
+sed on input line 18.
+(pdftex.def)             Requested size: 200.17851pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_02.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7759 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_02-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-2-eps-converted-to.pdf bfs_undirected_classroom_02.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_02-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_02-eps-converted-to.pdf bfs_undirected_classroom_key_02.eps>
 (epstopdf)             \includegraphics on input line 20.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_02-eps-converted-to.pdf 
-bfs_undirected_classroom_02.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_02-eps-converted-to.
+pdf bfs_undirected_classroom_key_02.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_02-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:30
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_02-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:23
 (epstopdf)                    size: 8365 bytes.
 
-<bfs_undirected_classroom_02-eps-converted-to.pdf, id=6, 356.33125pt x 405.515p
-t>
-File: bfs_undirected_classroom_02-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_02-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_02-eps-converted-to.pdf used 
-on input line 20.
-(pdftex.def)             Requested size: 123.19125pt x 140.19363pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_03.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
-(epstopdf)                    size: 7748 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_03-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-3-eps-converted-to.pdf bfs_undirected_classroom_03.eps>
-(epstopdf)             \includegraphics on input line 22.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_03-eps-converted-to.pdf 
-bfs_undirected_classroom_03.eps)...executed safely (allowed).
+<bfs_undirected_classroom_key_02-eps-converted-to.pdf, id=6, 356.33125pt x 405.
+515pt>
+File: bfs_undirected_classroom_key_02-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_02-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_02-eps-converted-to.pdf u
+sed on input line 20.
+(pdftex.def)             Requested size: 190.51843pt x 216.8122pt.
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_03-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:30
+Overfull \hbox (42.53464pt too wide) in paragraph at lines 16--22
+[][] [] []
+ []
+
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_03.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
+(epstopdf)                    size: 7748 bytes
+(epstopdf)             Output file: <bfs_undirected_classroom_key_03-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_03-eps-converted-to.pdf bfs_undirected_classroom_key_03.eps>
+(epstopdf)             \includegraphics on input line 24.
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_03-eps-converted-to.
+pdf bfs_undirected_classroom_key_03.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_03-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:23
 (epstopdf)                    size: 8267 bytes.
 
-<bfs_undirected_classroom_03-eps-converted-to.pdf, id=7, 332.24126pt x 405.515p
-t>
-File: bfs_undirected_classroom_03-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_03-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_03-eps-converted-to.pdf used 
-on input line 22.
-(pdftex.def)             Requested size: 123.19125pt x 150.35995pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_04.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_03-eps-converted-to.pdf, id=7, 332.24126pt x 405.
+515pt>
+File: bfs_undirected_classroom_key_03-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_03-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_03-eps-converted-to.pdf u
+sed on input line 24.
+(pdftex.def)             Requested size: 177.6383pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_04.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7770 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_04-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-4-eps-converted-to.pdf bfs_undirected_classroom_04.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_04-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_04-eps-converted-to.pdf bfs_undirected_classroom_key_04.eps>
 (epstopdf)             \includegraphics on input line 26.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_04-eps-converted-to.pdf 
-bfs_undirected_classroom_04.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_04-eps-converted-to.
+pdf bfs_undirected_classroom_key_04.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_04-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:30
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_04-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:23
 (epstopdf)                    size: 8246 bytes.
 
-<bfs_undirected_classroom_04-eps-converted-to.pdf, id=8, 310.15875pt x 405.515p
-t>
-File: bfs_undirected_classroom_04-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_04-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_04-eps-converted-to.pdf used 
-on input line 26.
-(pdftex.def)             Requested size: 123.19125pt x 161.06459pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_05.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_04-eps-converted-to.pdf, id=8, 310.15875pt x 405.
+515pt>
+File: bfs_undirected_classroom_key_04-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_04-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_04-eps-converted-to.pdf u
+sed on input line 26.
+(pdftex.def)             Requested size: 165.83153pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_05.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7816 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_05-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-5-eps-converted-to.pdf bfs_undirected_classroom_05.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_05-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_05-eps-converted-to.pdf bfs_undirected_classroom_key_05.eps>
 (epstopdf)             \includegraphics on input line 28.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_05-eps-converted-to.pdf 
-bfs_undirected_classroom_05.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_05-eps-converted-to.
+pdf bfs_undirected_classroom_key_05.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_05-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:31
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_05-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:24
 (epstopdf)                    size: 7843 bytes.
 
-<bfs_undirected_classroom_05-eps-converted-to.pdf, id=9, 310.15875pt x 405.515p
-t>
-File: bfs_undirected_classroom_05-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_05-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_05-eps-converted-to.pdf used 
-on input line 28.
-(pdftex.def)             Requested size: 123.19125pt x 161.06459pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_06.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_05-eps-converted-to.pdf, id=9, 310.15875pt x 405.
+515pt>
+File: bfs_undirected_classroom_key_05-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_05-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_05-eps-converted-to.pdf u
+sed on input line 28.
+(pdftex.def)             Requested size: 165.83153pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_06.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7805 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_06-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-6-eps-converted-to.pdf bfs_undirected_classroom_06.eps>
-(epstopdf)             \includegraphics on input line 30.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_06-eps-converted-to.pdf 
-bfs_undirected_classroom_06.eps)...executed safely (allowed).
+(epstopdf)             Output file: <bfs_undirected_classroom_key_06-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_06-eps-converted-to.pdf bfs_undirected_classroom_key_06.eps>
+(epstopdf)             \includegraphics on input line 32.
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_06-eps-converted-to.
+pdf bfs_undirected_classroom_key_06.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_06-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:31
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_06-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:24
 (epstopdf)                    size: 7741 bytes.
 
-<bfs_undirected_classroom_06-eps-converted-to.pdf, id=10, 290.08376pt x 405.515
-pt>
-File: bfs_undirected_classroom_06-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_06-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_06-eps-converted-to.pdf used 
-on input line 30.
-(pdftex.def)             Requested size: 123.19125pt x 172.21474pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_07.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_06-eps-converted-to.pdf, id=10, 290.08376pt x 405
+.515pt>
+File: bfs_undirected_classroom_key_06-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_06-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_06-eps-converted-to.pdf u
+sed on input line 32.
+(pdftex.def)             Requested size: 155.0981pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_07.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7793 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_07-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-7-eps-converted-to.pdf bfs_undirected_classroom_07.eps>
-(epstopdf)             \includegraphics on input line 32.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_07-eps-converted-to.pdf 
-bfs_undirected_classroom_07.eps)...executed safely (allowed).
+(epstopdf)             Output file: <bfs_undirected_classroom_key_07-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_07-eps-converted-to.pdf bfs_undirected_classroom_key_07.eps>
+(epstopdf)             \includegraphics on input line 34.
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_07-eps-converted-to.
+pdf bfs_undirected_classroom_key_07.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_07-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:31
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_07-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:24
 (epstopdf)                    size: 7414 bytes.
 
-<bfs_undirected_classroom_07-eps-converted-to.pdf, id=11, 265.99374pt x 405.515
-pt>
-File: bfs_undirected_classroom_07-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_07-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_07-eps-converted-to.pdf used 
-on input line 32.
-(pdftex.def)             Requested size: 123.19125pt x 187.80762pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_08.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
+<bfs_undirected_classroom_key_07-eps-converted-to.pdf, id=11, 265.99374pt x 405
+.515pt>
+File: bfs_undirected_classroom_key_07-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_07-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_07-eps-converted-to.pdf u
+sed on input line 34.
+(pdftex.def)             Requested size: 142.21797pt x 216.8122pt.
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_08.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
 (epstopdf)                    size: 7784 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_08-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-8-eps-converted-to.pdf bfs_undirected_classroom_08.eps>
+(epstopdf)             Output file: <bfs_undirected_classroom_key_08-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_08-eps-converted-to.pdf bfs_undirected_classroom_key_08.eps>
 (epstopdf)             \includegraphics on input line 36.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_08-eps-converted-to.pdf 
-bfs_undirected_classroom_08.eps)...executed safely (allowed).
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_08-eps-converted-to.
+pdf bfs_undirected_classroom_key_08.eps)...executed safely (allowed).
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_08-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:32
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_08-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:24
 (epstopdf)                    size: 7023 bytes.
 
-<bfs_undirected_classroom_08-eps-converted-to.pdf, id=12, 251.94125pt x 405.515
-pt>
-File: bfs_undirected_classroom_08-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_08-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_08-eps-converted-to.pdf used 
-on input line 36.
-(pdftex.def)             Requested size: 123.19125pt x 198.28331pt.
-Package epstopdf Info: Source file: <bfs_undirected_classroom_09.eps>
-(epstopdf)                    date: 2017-11-18 22:11:29
-(epstopdf)                    size: 6398 bytes
-(epstopdf)             Output file: <bfs_undirected_classroom_09-eps-converted-
-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_0
-9-eps-converted-to.pdf bfs_undirected_classroom_09.eps>
-(epstopdf)             \includegraphics on input line 40.
-runsystem(repstopdf --outfile=bfs_undirected_classroom_09-eps-converted-to.pdf 
-bfs_undirected_classroom_09.eps)...executed safely (allowed).
+<bfs_undirected_classroom_key_08-eps-converted-to.pdf, id=12, 251.94125pt x 405
+.515pt>
+File: bfs_undirected_classroom_key_08-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_08-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_08-eps-converted-to.pdf u
+sed on input line 36.
+(pdftex.def)             Requested size: 134.70457pt x 216.8122pt.
+ [1
 
-Package epstopdf Info: Result file: <bfs_undirected_classroom_09-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2017-11-18 22:11:32
+{/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./bfs_undirected
+_classroom_key_0-eps-converted-to.pdf> <./bfs_undirected_classroom_key_01-eps-c
+onverted-to.pdf> <./bfs_undirected_classroom_key_02-eps-converted-to.pdf> <./bf
+s_undirected_classroom_key_03-eps-converted-to.pdf> <./bfs_undirected_classroom
+_key_04-eps-converted-to.pdf> <./bfs_undirected_classroom_key_05-eps-converted-
+to.pdf>]
+Package epstopdf Info: Source file: <bfs_undirected_classroom_key_09.eps>
+(epstopdf)                    date: 2017-11-19 16:14:21
+(epstopdf)                    size: 6398 bytes
+(epstopdf)             Output file: <bfs_undirected_classroom_key_09-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=bfs_undirected_classroom_k
+ey_09-eps-converted-to.pdf bfs_undirected_classroom_key_09.eps>
+(epstopdf)             \includegraphics on input line 43.
+runsystem(repstopdf --outfile=bfs_undirected_classroom_key_09-eps-converted-to.
+pdf bfs_undirected_classroom_key_09.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <bfs_undirected_classroom_key_09-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2017-11-19 16:14:25
 (epstopdf)                    size: 6039 bytes.
 
-<bfs_undirected_classroom_09-eps-converted-to.pdf, id=13, 246.9225pt x 260.975p
-t>
-File: bfs_undirected_classroom_09-eps-converted-to.pdf Graphic file (type pdf)
- <use bfs_undirected_classroom_09-eps-converted-to.pdf>
-Package pdftex.def Info: bfs_undirected_classroom_09-eps-converted-to.pdf used 
-on input line 40.
-(pdftex.def)             Requested size: 123.19125pt x 130.20045pt.
+<bfs_undirected_classroom_key_09-eps-converted-to.pdf, id=76, 246.9225pt x 260.
+975pt>
+File: bfs_undirected_classroom_key_09-eps-converted-to.pdf Graphic file (type p
+df)
+ <use bfs_undirected_classroom_key_09-eps-converted-to.pdf>
+Package pdftex.def Info: bfs_undirected_classroom_key_09-eps-converted-to.pdf u
+sed on input line 43.
+(pdftex.def)             Requested size: 170.94939pt x 180.67499pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
 []\OT1/cmr/m/n/10 The re-sult-ing sub-graph:
  []
 
-[1
 
-{/home/nicolas/.texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./bfs_undirected
-_classroom_0-eps-converted-to.pdf> <./bfs_undirected_classroom_01-eps-converted
--to.pdf> <./bfs_undirected_classroom_02-eps-converted-to.pdf> <./bfs_undirected
-_classroom_03-eps-converted-to.pdf> <./bfs_undirected_classroom_04-eps-converte
-d-to.pdf> <./bfs_undirected_classroom_05-eps-converted-to.pdf> <./bfs_undirecte
-d_classroom_06-eps-converted-to.pdf> <./bfs_undirected_classroom_07-eps-convert
-ed-to.pdf>] [2 <./bfs_undirected_classroom_08-eps-converted-to.pdf> <./bfs_undi
-rected_classroom_09-eps-converted-to.pdf>]
+Overfull \hbox (6.70265pt too wide) in paragraph at lines 42--44
+[] 
+ []
+
+[2 <./bfs_undirected_classroom_key_06-eps-converted-to.pdf> <./bfs_undirected_c
+lassroom_key_07-eps-converted-to.pdf> <./bfs_undirected_classroom_key_08-eps-co
+nverted-to.pdf> <./bfs_undirected_classroom_key_09-eps-converted-to.pdf>]
 (./bfs_undirected_classroom_key.aux) ) 
 Here is how much of TeX's memory you used:
- 14380 strings out of 495020
- 277903 string characters out of 6181324
+ 14379 strings out of 495020
+ 278039 string characters out of 6181324
  314149 words of memory out of 5000000
- 17301 multiletter control sequences out of 15000+600000
+ 17302 multiletter control sequences out of 15000+600000
  11272 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,6n,54p,441b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,54p,445b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsl10.pfb>
-Output written on bfs_undirected_classroom_key.pdf (2 pages, 89802 bytes).
+Output written on bfs_undirected_classroom_key.pdf (2 pages, 89875 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream
