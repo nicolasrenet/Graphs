@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  16 NOV 2017 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.5.21)  18 NOV 2017 22:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -652,7 +652,7 @@ Overfull \hbox (21.79999pt too wide) in paragraph at lines 10--11
  []
 
 Package epstopdf Info: Source file: <bfs_undirected_classroom_0.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7585 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_0-eps-converted-t
 o.pdf>
@@ -664,7 +664,7 @@ fs_undirected_classroom_0.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_0-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7930 bytes.
 
 <bfs_undirected_classroom_0-eps-converted-to.pdf, id=4, 326.21875pt x 405.515pt
@@ -675,7 +675,7 @@ Package pdftex.def Info: bfs_undirected_classroom_0-eps-converted-to.pdf used o
 n input line 16.
 (pdftex.def)             Requested size: 123.19125pt x 153.1382pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_01.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7714 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_01-eps-converted-
 to.pdf>
@@ -687,7 +687,7 @@ bfs_undirected_classroom_01.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_01-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:09
+(epstopdf)                    date: 2017-11-18 22:11:30
 (epstopdf)                    size: 8163 bytes.
 
 <bfs_undirected_classroom_01-eps-converted-to.pdf, id=5, 374.39874pt x 405.515p
@@ -698,7 +698,7 @@ Package pdftex.def Info: bfs_undirected_classroom_01-eps-converted-to.pdf used
 on input line 18.
 (pdftex.def)             Requested size: 123.19125pt x 133.43053pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_02.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7759 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_02-eps-converted-
 to.pdf>
@@ -710,7 +710,7 @@ bfs_undirected_classroom_02.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_02-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:09
+(epstopdf)                    date: 2017-11-18 22:11:30
 (epstopdf)                    size: 8365 bytes.
 
 <bfs_undirected_classroom_02-eps-converted-to.pdf, id=6, 356.33125pt x 405.515p
@@ -721,7 +721,7 @@ Package pdftex.def Info: bfs_undirected_classroom_02-eps-converted-to.pdf used
 on input line 20.
 (pdftex.def)             Requested size: 123.19125pt x 140.19363pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_03.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7748 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_03-eps-converted-
 to.pdf>
@@ -733,7 +733,7 @@ bfs_undirected_classroom_03.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_03-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:09
+(epstopdf)                    date: 2017-11-18 22:11:30
 (epstopdf)                    size: 8267 bytes.
 
 <bfs_undirected_classroom_03-eps-converted-to.pdf, id=7, 332.24126pt x 405.515p
@@ -744,7 +744,7 @@ Package pdftex.def Info: bfs_undirected_classroom_03-eps-converted-to.pdf used
 on input line 22.
 (pdftex.def)             Requested size: 123.19125pt x 150.35995pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_04.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7770 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_04-eps-converted-
 to.pdf>
@@ -756,7 +756,7 @@ bfs_undirected_classroom_04.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_04-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:09
+(epstopdf)                    date: 2017-11-18 22:11:30
 (epstopdf)                    size: 8246 bytes.
 
 <bfs_undirected_classroom_04-eps-converted-to.pdf, id=8, 310.15875pt x 405.515p
@@ -767,7 +767,7 @@ Package pdftex.def Info: bfs_undirected_classroom_04-eps-converted-to.pdf used
 on input line 26.
 (pdftex.def)             Requested size: 123.19125pt x 161.06459pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_05.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7816 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_05-eps-converted-
 to.pdf>
@@ -779,7 +779,7 @@ bfs_undirected_classroom_05.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_05-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:10
+(epstopdf)                    date: 2017-11-18 22:11:31
 (epstopdf)                    size: 7843 bytes.
 
 <bfs_undirected_classroom_05-eps-converted-to.pdf, id=9, 310.15875pt x 405.515p
@@ -790,7 +790,7 @@ Package pdftex.def Info: bfs_undirected_classroom_05-eps-converted-to.pdf used
 on input line 28.
 (pdftex.def)             Requested size: 123.19125pt x 161.06459pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_06.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7805 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_06-eps-converted-
 to.pdf>
@@ -802,7 +802,7 @@ bfs_undirected_classroom_06.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_06-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:10
+(epstopdf)                    date: 2017-11-18 22:11:31
 (epstopdf)                    size: 7741 bytes.
 
 <bfs_undirected_classroom_06-eps-converted-to.pdf, id=10, 290.08376pt x 405.515
@@ -813,7 +813,7 @@ Package pdftex.def Info: bfs_undirected_classroom_06-eps-converted-to.pdf used
 on input line 30.
 (pdftex.def)             Requested size: 123.19125pt x 172.21474pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_07.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7793 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_07-eps-converted-
 to.pdf>
@@ -825,7 +825,7 @@ bfs_undirected_classroom_07.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_07-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:10
+(epstopdf)                    date: 2017-11-18 22:11:31
 (epstopdf)                    size: 7414 bytes.
 
 <bfs_undirected_classroom_07-eps-converted-to.pdf, id=11, 265.99374pt x 405.515
@@ -836,7 +836,7 @@ Package pdftex.def Info: bfs_undirected_classroom_07-eps-converted-to.pdf used
 on input line 32.
 (pdftex.def)             Requested size: 123.19125pt x 187.80762pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_08.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 7784 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_08-eps-converted-
 to.pdf>
@@ -848,7 +848,7 @@ bfs_undirected_classroom_08.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_08-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:11
+(epstopdf)                    date: 2017-11-18 22:11:32
 (epstopdf)                    size: 7023 bytes.
 
 <bfs_undirected_classroom_08-eps-converted-to.pdf, id=12, 251.94125pt x 405.515
@@ -859,7 +859,7 @@ Package pdftex.def Info: bfs_undirected_classroom_08-eps-converted-to.pdf used
 on input line 36.
 (pdftex.def)             Requested size: 123.19125pt x 198.28331pt.
 Package epstopdf Info: Source file: <bfs_undirected_classroom_09.eps>
-(epstopdf)                    date: 2017-11-16 23:06:08
+(epstopdf)                    date: 2017-11-18 22:11:29
 (epstopdf)                    size: 6398 bytes
 (epstopdf)             Output file: <bfs_undirected_classroom_09-eps-converted-
 to.pdf>
@@ -871,7 +871,7 @@ bfs_undirected_classroom_09.eps)...executed safely (allowed).
 
 Package epstopdf Info: Result file: <bfs_undirected_classroom_09-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-16 23:06:11
+(epstopdf)                    date: 2017-11-18 22:11:32
 (epstopdf)                    size: 6039 bytes.
 
 <bfs_undirected_classroom_09-eps-converted-to.pdf, id=13, 246.9225pt x 260.975p
@@ -910,7 +910,7 @@ Here is how much of TeX's memory you used:
 c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsl10.pfb>
-Output written on bfs_undirected_classroom_key.pdf (2 pages, 89811 bytes).
+Output written on bfs_undirected_classroom_key.pdf (2 pages, 89802 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  87 compressed objects within 1 object stream

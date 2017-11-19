@@ -30,8 +30,16 @@ g = Graph.from_dot( args.dotfile)
 
 if args.algorithm=='dfs':
 	g.depth_first( args.prefix, blank=args.blank )
+	algorithm_str = "Depth-First Search"
+elif args.algorithm=='dijkstra':
+	g.dijkstra( args.vertex, args.prefix, blank=args.blank )
+	algorithm_str = "Dijkstra Shortest Path"
+elif args.algorithm=="dag-shortest-path":
+	g.dag_shortest_path( args.vertex, args.prefix, blank=args.blank)
+	algorithm_str = "DAG Shortest Path"
 elif args.vertex is not None:
 	g.breadth_first( args.vertex, args.prefix, blank=args.blank )
+	algorithm_str = "Breadth-First Search"
 
 os.system('for i in {}*[0-9].dot; do eps=${{i%.dot}}.eps ; dot -Teps $i > $eps ; done'.format(args.prefix) )
 
@@ -48,7 +56,9 @@ preamble = """ \\documentclass{article}
 \\usepackage{color}
 """
 
-preamble +='\\title{{Graph Algorithms: {}}}'.format( 'Breadth-First Search' if args.algorithm=='bfs' else 'Depth-First Search')
+
+
+preamble +='\\title{{Graph Algorithms: {}}}'.format( algorithm_str )
 preamble += '\\begin{document}'
 preamble += '\\maketitle'
 

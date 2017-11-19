@@ -1,0 +1,18 @@
+Digraph {
+r [ label="r:INFTY" ];
+s [ label="s:0" ];
+t [ label="t:INFTY" ];
+x [ label="x:INFTY" ];
+y [ label="y:INFTY" ];
+z [ label="z:INFTY" ];
+r->s[label="5", penwidth=1];
+r->t[label="3", penwidth=1];
+s->t[label="2", penwidth=1];
+s->x[label="6", penwidth=1];
+t->x[label="7", penwidth=1];
+t->y[label="4", penwidth=1];
+t->z[label="2", penwidth=1];
+x->y[label="-1", penwidth=1];
+x->z[label="1", penwidth=1];
+y->z[label="-2", penwidth=1];
+}

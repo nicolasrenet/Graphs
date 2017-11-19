@@ -1,0 +1,12 @@
+Digraph {
+r [ label="r:INFTY" ];
+s [ label="s:0" ];
+t [ label="t:2" ];
+x [ label="x:6" ];
+y [ label="y:5" ];
+z [ label="z:3" ];
+s->t[label="2", penwidth=3];
+s->x[label="6", penwidth=3];
+x->y[label="-1", penwidth=3];
+y->z[label="-2", penwidth=3];
+}

@@ -66,4 +66,20 @@ clrs_example_dfs: % : %.dot
 	pdflatex $@_key
 
 
-	
+dijkstra_gross_yellen: % : %.dot
+	rm -f $@_[0-9]*
+	../alg_to_tex.py -b -l 3 -s -d "Gross \& Yellen, p.~180" -a dijkstra -v s $@.dot $@_ > $@ > $@.tex
+	pdflatex $@
+
+	rm -f $@_[0-9]*
+	../alg_to_tex.py -l 3 -s -d "Gross \& Yellen, p.~180" -a dijkstra -v s $@.dot $@_ > $@ > $@_key.tex
+	pdflatex $@_key
+
+dag_shortest_path: % : weighted_dag.dot
+	rm  -f $@_[0-9]*
+	../alg_to_tex.py -b -l 5 -s -d "Classroom example, directed graph" -a dag-shortest-path -v 's' $< $@_ > $@.tex 
+	pdflatex $@
+
+	rm  -f $@_[0-9]*
+	../alg_to_tex.py -l 5 -s -d "Classroom example, directed graph" -a dag-shortest-path -v s $< $@_ > $@_key.tex 
+	pdflatex $@_key

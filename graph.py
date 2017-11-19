@@ -22,6 +22,8 @@ class LabelException( Exception ): pass
 class Walk(Enum):
 	BFS=0
 	DFS=1
+	DIJKSTRA=2
+	DAGSP=3
 
 class Vertex():
 	""" A vertex definition."""
@@ -75,7 +77,7 @@ class Vertex():
 
 		label_string = self.label
 
-		if walk==Walk.BFS:
+		if walk==Walk.BFS or walk==Walk.DIJKSTRA or walk==Walk.DAGSP:
 			label_string += ':{}'.format( 'INFTY' if self.distance==Vertex.INFTY else self.distance)
 		elif walk==Walk.DFS:
 			label_string += ':{}:{}'.format( self.discovery if self.discovery else '-', self.finish if self.finish else '-' )
@@ -96,9 +98,9 @@ class Vertex():
 			return self.distance > other.distance
 		return NotImplemented
 
-	def __lt__(self, other):
-		if isinstance(other, Vertex):
-			return self.label < other.label
+	#def __lt__(self, other):
+	#	if isinstance(other, Vertex):
+	#		return self.label < other.label
 	
 	def __str__(self):
 		return '({}:{} dist={} )'.format(self.label, self.distance, self.pi)
@@ -157,15 +159,20 @@ class Graph():
 	
 
 	def unique_edges(self):
+		"""
+		"""
 
 		checked_matrix = { v1: { v2: False for v2 in self.V.values() } for v1 in self.V.values() }
 		edges = []
 
 		for u in self.V.values():
 			for v in self.Adj[u]:
-				if not checked_matrix[u][v] and not checked_matrix[v][u]:
-					checked_matrix[u][v]=True
-					checked_matrix[v][u]=True
+				if not self.directed:
+					if not checked_matrix[u][v] and not checked_matrix[v][u]:
+						checked_matrix[u][v]=True
+						checked_matrix[v][u]=True
+						edges.append( (u,v) )
+				else:
 					edges.append( (u,v) )
 		return edges
 
@@ -181,6 +188,7 @@ class Graph():
 		s.distance = 0
 		s.color = Vertex.GRAY
 		queue.append( s )
+
 		
 		def queue_string():
 			if blank:
@@ -188,10 +196,7 @@ class Graph():
 			return 'Q={}'.format([vtx.label for vtx in queue ])
 	
 
-		file_strings = []
 		file_number = 0
-
-		edges_to_remove=[]
 
 		if file_prefix!='':
 				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), legend=queue_string(), blank=blank)
@@ -206,14 +211,13 @@ class Graph():
 					v.distance = u.distance + 1
 					v.pi = u
 					queue.insert(0,v)
-				else:
-					edges_to_remove.append( (u,v) )
+
 			u.color = Vertex.BLACK
 
 			if file_prefix!='':
 				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(), blank=blank)
 
-		self.to_tree(edges_to_remove)
+		self.to_tree()
 
 		if file_prefix!='' and not blank:
 			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string())
@@ -223,6 +227,8 @@ class Graph():
 
 	def to_dot_file(self, filename, walk=Walk.BFS, legend='', blank=False):
 		"""
+		Dum the graph to a dot file.
+		
 		:param filename: the file to be written
 		:type filename: str
 		:param legend: an optional string to be added to the graph (a caption, or the state of data structure)
@@ -236,7 +242,7 @@ class Graph():
 
 	def to_dot(self, walk, legend='', blank=False):
 		"""
-		Return a dot graph.
+		Return a string representation of the graph, in dot format.
 
 		:param legend: an optional string to be added to the graph (a caption, or the state of data structure)
 		:type legend: str
@@ -255,10 +261,14 @@ class Graph():
 
 		for edge in self.unique_edges():
 			u,v = edge
-			penwidth=3 if (not blank and (u.pi is v or v.pi is u)) else 1
+			penwidth=1 
 			if self.directed:
+				if not blank and v.pi is u:
+					penwidth=3
 				gs.append( '{}->{}[label="{}", penwidth={}];'.format(u.label, v.label, self.Matrix[u][v] if self.weighted else '', penwidth))
-			else:	
+			else:
+				if not blank and u.pi is v or v.pi is u:
+					penwidth=3
 				gs.append( '{}--{}[label="{}", penwidth={}];'.format(u.label, v.label, self.Matrix[u][v] if self.weighted else '', penwidth))
 		if legend != '':
 			gs.append( 'legend[label="{}", color=white];'.format( legend ))
@@ -273,7 +283,7 @@ class Graph():
 		"""	
 		#log("Starting DFS...")
 		time = 0
-		edges_to_remove=[]
+
 
 		def depth_first_visit(u, spacer=''):
 			""" Recursive procedure, for depth-first search
@@ -297,8 +307,6 @@ class Graph():
 				if v.color == Vertex.WHITE:
 					v.pi = u
 					depth_first_visit( v, spacer+'\t' )
-				else:
-					edges_to_remove.append( (u,v) )
 					
 			u.color = Vertex.BLACK
 			#print('{}.color={}'.format( u.label, u.color))
@@ -317,13 +325,23 @@ class Graph():
 		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, blank=blank)
 
-		self.to_tree(edges_to_remove)
+		self.to_tree()
 	
 		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
 	
-	def to_tree(self, rm):
-		for edge in rm:
+
+	def to_tree(self):
+		"""After DFS or BFS, remove the edges that are not in the resulting  subgraph.
+		"""
+		edges_to_remove=[]
+
+		for u,lst in self.Adj.items():
+			for v in lst:
+				if v.pi is not u:
+					edges_to_remove.append( (u, v) )
+
+		for edge in edges_to_remove:
 			u,v=edge
 			self.Adj[u].remove(v)
 			self.Matrix[u][v]=None
@@ -335,7 +353,7 @@ class Graph():
 		""" Topological sort: return a topologically sorted list of vertices
 		:rtype: list
 		"""	
-		log("Starting topological sort...")
+		#log("Starting topological sort...")
 
 		time = 0
 		def depth_first_topo(u, spacer=''): 
@@ -369,25 +387,41 @@ class Graph():
 		return topo
 
 
-	def dijkstra(self, s):
+	def dijkstra(self, s, file_prefix='', blank=False):
 		""" Dijkstra's shortest path algorithm
 
 		:param s: starting vertex (a label)
 		:type s: str
 		"""
 
-		log("Starting Dijkstra...")
+		#log("Starting Dijkstra...")
 		self.initialize_single_source( self.V[s] )
 		S = []
 
 		minQueue = MinHeap( self.V.values() )
 
+		file_number=0
+
+		if file_prefix!='':
+				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), blank=blank)
+
 		while minQueue.size > 0:
 			u = minQueue.extract_min()
+			u.color=Vertex.BLACK
 			log("Extract vertex {} (d={})".format(u.label, u.distance),3)
 			S.append( u )
 			for v in self.Adj[ u ]:
-				self.relax( u, v)
+				self.relax( u, v )
+
+			if file_prefix!='':
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), blank=blank)
+		
+
+		self.to_tree()
+	
+		if not blank and file_prefix != '':
+			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DIJKSTRA, blank=blank)
+			
 
 	def dijkstra_faulty(self, s):
 		""" Dijkstra's shortest path algorithm """
@@ -407,22 +441,35 @@ class Graph():
 			for v_idx in self.Adj[ u.index ]:
 				self.relax( u, self.V[ v_idx ])
 
-	def dag_shortest_path(self, start):
+	def dag_shortest_path(self, start, file_prefix='', blank=False):
 		""" DAG Shortest path
 
 		:param start: start vertex
 		:type start: str
 		"""
-		log("Starting DAG shortest path...")
+		log("Starting DAG shortest path...",3)
 
 		s = self.V[start]
 		sorted_vertices = self.topo_sort()
 		
 		self.initialize_single_source(s)
+
+		file_number=0
+		if file_prefix != '':
+			file_number+=self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), blank=blank)
+
 		for u in sorted_vertices:
 			log("-- u={} -- ".format(u.label),3)
 			for v in self.Adj[ u ]:
 				self.relax(u, v)
+			u.color=Vertex.BLACK
+			if file_prefix != '':
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), blank=blank)
+		self.to_tree()
+
+		if file_prefix!='' and not blank:
+			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number)) 
+
 
 
 	def initialize_single_source(self, s):
@@ -432,11 +479,12 @@ class Graph():
 		:type s: Vertex
 		"""
 		for label, v in self.V.items():
+			v.color=Vertex.WHITE
 			v.distance = Vertex.INFTY
 			v.pi = None
 		s.distance = 0
 
-	def relax(self, u, v):
+	def relax(self, u, v ):
 		"""
 		Relax vertex v through u
 
@@ -451,7 +499,6 @@ class Graph():
 
 			if hasattr(v,'heap') and v.heap is not None:
 				v.float_key( v.heap_index )
-			
 			v.pi = u
 
 
@@ -480,7 +527,10 @@ class Graph():
 
 
 		# 'w--s[label="", penwidth=3];' or 'w--s[label="7", penwidth=3];
-		edge_re = re.compile(r'^\s*(\w+)\s*-[->]\s*(\w+)\s*(\[.*(label="(\d+)")?.*\])?\s*;')
+		edge_re = re.compile(r'^\s*(\w+)\s*-[->]\s*(\w+)\s*(\[.*\])?\s*;')
+
+		label_re = re.compile(r'.*label="(-?\d+)".*')
+
 		for line in gf:
 			v_match = vertex_re.match( line )
 			e_match = edge_re.match( line )
@@ -490,12 +540,17 @@ class Graph():
 			if v_match:
 				v.append( v_match.group(1) )
 			elif e_match:
+				#print(e_match, e_match.lastindex)
 				v1,v2  = e_match.group(1), e_match.group(2)
 				if not directed and v1 > v2:
 					v2,v1 = v1,v2
 				weight=None
-				if e_match.lastindex==5:
-					e.append( ( v1, v2, int(e_match.group(4))))
+				if e_match.lastindex==3:
+						label_match = label_re.match( e_match.group(3) )
+						if label_match:
+							#print("Found weight")
+							e.append( ( v1, v2, int(label_match.group(1))))
+						else: e.append( (v1,v2) )
 				else:
 					e.append( (v1, v2))
 		gf.close()			
@@ -528,7 +583,7 @@ class Graph():
 class GraphUnitTest( unittest.TestCase ):
 
 
-	def atest_weight_graph_creation(self):
+	def test_weight_graph_creation(self):
 
 		g = self.make_dijkstra_graph()
 		#print('{}'.format(g.Matrix))
@@ -536,7 +591,7 @@ class GraphUnitTest( unittest.TestCase ):
 		#self.assertEqual( g.Matrix[0][3], 5)
 
 
-	def atest_dag_shortest_path_1(self):
+	def test_dag_shortest_path_1(self):
 		""" Cormen Figure 24.5, p. 656 """
 		g = self.make_weighted_dag()
 		g.dag_shortest_path('s') 
@@ -547,7 +602,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['t'].pi, g.V['s'])
 
 
-	def atest_dag_shortest_path_2(self):
+	def test_dag_shortest_path_2(self):
 		""" Cormen Figure 24.5, p. 656 """
 		g = self.make_weighted_dag()
 		g.dag_shortest_path('s') 
@@ -559,7 +614,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['s'].distance, 0)
 		self.assertEqual( g.V['r'].distance, Vertex.INFTY)
 
-	def atest_dag_shortest_path_3(self):
+	def test_dag_shortest_path_3(self):
 		g = self.make_weighted_dag_2()
 		g.dag_shortest_path('b') 
 
@@ -569,7 +624,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['d'].pi, g.V['b'])
 		self.assertEqual( g.V['c'].pi, g.V['b'])
 
-	def atest_dag_shortest_path_4(self):
+	def test_dag_shortest_path_4(self):
 		g = self.make_weighted_dag_2()
 		g.dag_shortest_path('b') 
 
@@ -581,7 +636,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['b'].distance, 0)
 		self.assertEqual( g.V['a'].distance, Vertex.INFTY)
 
-	def atest_dijkstra_1(self):
+	def test_dijkstra_1(self):
 		""" Cormen Figure 24.6, p. 659 """
 		g = self.make_dijkstra_graph()
 		g.dijkstra( 's' )		
@@ -592,7 +647,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['y'].distance, 5)
 		self.assertEqual( g.V['z'].distance, 7)
 
-	def atest_dijkstra_2(self):
+	def test_dijkstra_2(self):
 #		""" Cormen Figure 24.6, p. 659 """
 		g = self.make_dijkstra_graph()
 		g.dijkstra( 's' )		
@@ -603,7 +658,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['y'].pi, g.V['s'])
 		self.assertEqual( g.V['z'].pi, g.V['y'])
 #
-	def atest_dijkstra_3(self):
+	def test_dijkstra_3(self):
 #		""" Gross & Yellen, p. 180 """
 		g = self.make_dijkstra_graph_2()
 		g.dijkstra( 's' )		
@@ -617,7 +672,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['f'].distance, 12)
 		self.assertEqual( g.V['g'].distance, 5)
 #
-	def atest_dijkstra_4(self):
+	def test_dijkstra_4(self):
 #		""" Gross & Yellen, p. 180 """
 		g = self.make_dijkstra_graph_2()
 		g.dijkstra( 's' )		
@@ -631,7 +686,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['f'].pi, g.V['e'])
 		self.assertEqual( g.V['g'].pi, g.V['s'])
 #
-	def atest_dijkstra_5(self):
+	def test_dijkstra_5(self):
 #		""" Gross & Yellen, p. 180, directed version """
 		g = self.make_dijkstra_graph_3()
 		g.dijkstra( 's' )		
@@ -640,12 +695,12 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['a'].distance, 4)
 		self.assertEqual( g.V['b'].distance, 7)
 		self.assertEqual( g.V['c'].distance, 7)
-		self.assertEqual( g.V['d'].distance, 11)
+		self.assertEqual( g.V['d'].distance, 7)
 		self.assertEqual( g.V['e'].distance, 3)
 		self.assertEqual( g.V['f'].distance, 9)
 		self.assertEqual( g.V['g'].distance, 8)
 #
-	def atest_dijkstra_6(self):
+	def test_dijkstra_6(self):
 #		""" Gross & Yellen, p. 180, directed version """
 		g = self.make_dijkstra_graph_3()
 		g.dijkstra( 's' )		
@@ -659,7 +714,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['f'].pi, g.V['c'])
 		self.assertEqual( g.V['g'].pi, g.V['a'])
 #
-#	def atest_dijkstra_7(self):
+#	def test_dijkstra_7(self):
 #		""" Gross & Yellen, p. 180, directed version, faulty queue: designed to fail """
 #		g = self.make_dijkstra_graph_3()
 #		g.dijkstra_faulty( 's' )		
@@ -673,7 +728,7 @@ class GraphUnitTest( unittest.TestCase ):
 #		self.assertEqual( g.vertex('f').distance, 9)
 #		self.assertEqual( g.vertex('g').distance, 8)
 #
-#	def atest_dijkstra_8(self):
+#	def test_dijkstra_8(self):
 #		""" Gross & Yellen, p. 180, directed version, faulty queue: designed to fail """
 #		g = self.make_dijkstra_graph_3()
 #		g.dijkstra_faulty( 's' )		
@@ -687,20 +742,20 @@ class GraphUnitTest( unittest.TestCase ):
 #		self.assertEqual( g.vertex('f').pi, g.vertex('c'))
 #		self.assertEqual( g.vertex('g').pi, g.vertex('a'))
 
-	def atest_breadth_first_1(self):
+	def test_breadth_first_1(self):
 		g = self.make_sample_undirected_graph()
 
 		g.breadth_first( 'a' )
 
 		self.assertEqual(g.vertex('a').distance,0)
 
-	def atest_topological(self):
+	def test_topological(self):
 		g = self.make_dag()
 
 		g.topo_sort()
 
 	
-	def atest_depth_first_1(self):
+	def test_depth_first_1(self):
 		"""" Discovery time """
 		g = self.make_sample_undirected_graph()
 
@@ -715,7 +770,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['g'].discovery, 7)
 		self.assertEqual(g.V['h'].discovery, 6)
 
-	def atest_depth_first_2(self):
+	def test_depth_first_2(self):
 		"""" Finish time """
 		g = self.make_sample_undirected_graph()
 
@@ -731,7 +786,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['h'].finish, 9)
 
 
-	def atest_depth_first_3(self):
+	def test_depth_first_3(self):
 		"""" Digraph: discovery time """
 		g = self.make_sample_digraph_2()
 
@@ -748,7 +803,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['i'].discovery, 17)
 		self.assertEqual(g.V['j'].discovery, 18)
 
-	def atest_depth_first_4(self):
+	def test_depth_first_4(self):
 		"""" Digraph: finish time """
 		g = self.make_sample_digraph_2()
 
@@ -765,7 +820,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['i'].finish, 20)
 		self.assertEqual(g.V['j'].finish, 19)
 
-	def atest_breadth_first_1(self):
+	def test_breadth_first_1(self):
 		"""" Predecessors """
 		g = self.make_sample_undirected_graph()
 
@@ -780,7 +835,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['b'].pi, g.V['a'] )
 		self.assertEqual(g.V['d'].pi, g.V['a'] )
 	
-	def atest_breadth_first_2(self):
+	def test_breadth_first_2(self):
 		"""" Distances """
 		g = self.make_sample_undirected_graph()
 
@@ -796,7 +851,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['h'].distance, 3)
 	
 	
-	def atest_breadth_first_3(self):
+	def test_breadth_first_3(self):
 		"""" Digraph: predecessors """
 		g = self.make_sample_digraph()
 
@@ -811,7 +866,7 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['b'].pi, g.V['a'] )
 		self.assertEqual(g.V['d'].pi, g.V['a'] )
 	
-	def atest_breadth_first_4(self):
+	def test_breadth_first_4(self):
 		"""" Digraph: distances """
 		g = self.make_sample_digraph()
 
@@ -835,13 +890,13 @@ class GraphUnitTest( unittest.TestCase ):
 #
 #		self.assertEqual( g.Adj, [ [1,2,3], [0,2,4,5], [0,1,3,5],[0,2,4,5,6],[1,3,7],[1,2,3],[3,7],[3,6]] )
 #
-	def atest_graph_creation_2(self):
+	def test_graph_creation_2(self):
 #		
 		g = self.make_sample_undirected_graph()
 #		
 #		self.assertEqual( g.Adj, [ [1,2,3], [0,2,4,5], [0,1,3,5],[0,2,4,5,6],[1,3,7],[1,2,3],[3,7],[3,6]] )
 #
-	def atest_graph_creation_3(self):
+	def test_graph_creation_3(self):
 		print("Test create directed graph")
 #		
 		g = self.make_sample_digraph()
@@ -903,7 +958,7 @@ class GraphUnitTest( unittest.TestCase ):
 				('f','c'),('f','d'), 
 				('h','g'),
 				('i','g'),('i','j'),
-				('j','j')))
+				('j','j')), directed=True)
 		return g
 
 	@classmethod
@@ -917,7 +972,7 @@ class GraphUnitTest( unittest.TestCase ):
 				('belt','jacket'),
 				('shirt','belt'),
 				('shirt','tie'),
-				('socks','shoes')))
+				('socks','shoes')), directed=True)
 		return g
 
 
@@ -930,8 +985,8 @@ class GraphUnitTest( unittest.TestCase ):
 				('t','x',1), ('t','y',2),
 				('x','z',4),
 				('y','t',3),('y','x',9),('y','z',2),
-				('z','s',7),('z','x',6))
-		)
+				('z','s',7),('z','x',6)),
+				directed=True)
 		return g
 	
 	@classmethod
@@ -960,9 +1015,9 @@ class GraphUnitTest( unittest.TestCase ):
 				('b','c',9),('b','f',8),
 				('c','d',7),('c','f',2),
 				('d','e',8),('d','c',1),
-				('e','a',1),('e','c',4),('e','d',8),('e','f',12),
+				('e','a',1),('e','c',4),('e','d',4),('e','f',12),
 				('f','c',11),
-				('g','s',5)))
+				('g','s',5)), directed=True)
 		return g
 	
 	
@@ -977,7 +1032,7 @@ class GraphUnitTest( unittest.TestCase ):
 				('t','x',7),('t','y',4),('t','z',2),
 				('x','y',-1),('x','z',1),
 				('y','z',-2)
-			)
+			), directed=True
 		)
 		return g
 	
@@ -991,7 +1046,7 @@ class GraphUnitTest( unittest.TestCase ):
 				('d','e',6),('d','f',-2),
 				('e','f',1),('e','g',3),
 				('f','g',1)
-			)
+			), directed=True
 		)
 		return g
 	

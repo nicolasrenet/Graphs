@@ -1,0 +1,17 @@
+Digraph {
+a [ label="a:4" ];
+b [ label="b:7" ];
+c [ label="c:7" ];
+d [ label="d:7" ];
+e [ label="e:3" ];
+f [ label="f:9" ];
+g [ label="g:8" ];
+s [ label="s:0" ];
+a->g[label="4", penwidth=3];
+c->f[label="2", penwidth=3];
+e->a[label="1", penwidth=3];
+e->c[label="4", penwidth=3];
+e->d[label="4", penwidth=3];
+s->b[label="7", penwidth=3];
+s->e[label="3", penwidth=3];
+}

@@ -1,0 +1,26 @@
+Digraph{
+s [label="s"];
+a [label="a"];
+b [label="b"];
+c [label="c"];
+d [label="d"];
+e [label="e"];
+f [label="f"];
+g [label="g"];
+s->a [label="5"];
+s->b [label="7"];
+s->e [label="3"];
+a->g [label="4"];
+b->c [label="9"];
+b->f [label="8"];
+c->d [label="7"];
+c->f [label="2"];
+d->e [label="8"];
+d->c [label="1"];
+e->a [label="1"];
+e->c [label="4"];
+e->d [label="4"];
+e->f [label="12"];
+f->c [label="11"];
+g->s [label="5"];
+}
