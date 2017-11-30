@@ -33,6 +33,9 @@ os.system('rm -f {}[0-9]*'.format(args.prefix))
 if args.algorithm=='dfs':
 	g.depth_first( args.prefix, blank=args.blank )
 	algorithm_str = "Depth-First Search"
+elif args.algorithm=='topo':
+	g.topo_sort( args.prefix, blank=args.blank )
+	algorithm_str = "Topological Sort"
 elif args.algorithm=='dijkstra':
 	g.dijkstra( args.vertex, args.prefix, blank=args.blank )
 	algorithm_str = "Dijkstra Shortest Path"
@@ -87,7 +90,7 @@ for d in range(0,len(diagrams)):
 	else:
 		print('\\vspace{1em}')
 	if d==len(diagrams)-1 and not args.blank:
-		print('\\HR')
+		#print('\\HR')
 		print('\\begin{{minipage}}[b][.25\\textheight]{{{}\\linewidth}}'.format(ratio))
 		print('The resulting subgraph: ')
 		print('\\includegraphics[height=.25\\textheight]{{{}}}'.format(diagrams[d] ))	

@@ -105,7 +105,7 @@ class Vertex():
 	#		return self.label < other.label
 	
 	def __str__(self):
-		return '({}:{} dist={} )'.format(self.label, self.distance, self.pi)
+		return '({}:{} pi={} )'.format(self.label, self.distance, self.pi.label if self.pi else self.pi)
 
 class Graph():
 	""" A graph definition """
@@ -173,16 +173,16 @@ class Graph():
 		queue.append( s )
 
 		
-		def queue_string():
+		def queue_string(q):
 			if blank:
 				return 'Q='
-			return 'Q={}'.format([vtx.label for vtx in queue ])
+			return 'Q={}'.format([vtx.label for vtx in q ])
 	
 
 		file_number = 0
 
 		if file_prefix!='':
-				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), legend=queue_string(), blank=blank)
+				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), legend=queue_string(q), blank=blank)
 		while queue:
 			u = queue.pop()
 			#print('Popping vertex {} with adjacency list: {}'.format(u.label, self.Adj[u]))
@@ -198,12 +198,12 @@ class Graph():
 			u.color = Vertex.BLACK
 
 			if file_prefix!='':
-				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(), blank=blank)
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(q), blank=blank)
 
-		self.to_tree()
 
 		if file_prefix!='' and not blank:
-			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string())
+			self.to_tree()
+			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(q))
 
 			
 
@@ -254,19 +254,27 @@ class Graph():
 		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, blank=blank)
 
-		self.to_tree()
+			self.to_tree()
 	
-		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
 	
 
-	def topo_sort(self):
+	def topo_sort(self, file_prefix='', blank=False):
 		""" Topological sort: return a topologically sorted list of vertices
 		:rtype: list
 		"""	
 		#log("Starting topological sort...")
 
 		time = 0
+
+		def topo_string(lst):
+			"""
+			Display the content of the topologically sorted list
+			"""
+			if blank:
+				return 'S='
+			return 'Sorted list S=[{}]'.format(', '.join([ v.label for v in lst ]))
+
 		def depth_first_topo(u, spacer=''): 
 			""" Recursive procedure, for depth-first search
 
@@ -280,21 +288,38 @@ class Graph():
 			log(spacer+'depth_first_visit({}) at time {}:00'.format( u.label, time ),3)
 			u.discovery = time
 			u.color = Vertex.GRAY
+
+			if file_prefix != '':
+				self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, legend=topo_string(topo),  blank=blank )
+
 			for v in self.Adj[ u ]:
 				if v.color == Vertex.WHITE:
 					v.pi = u
 					depth_first_topo( v, spacer+'\t' )
-			u.color == Vertex.BLACK
+			u.color = Vertex.BLACK
 			time += 1
 			u.finish = time
 			
 			topo.insert(0, u)
+
+
+			if file_prefix != '':
+				self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, legend=topo_string(topo), blank=blank )
+
 			log(spacer+'finish {} at time {}:00'.format( u.label, time ),3)
 
 		topo=[]
-		for label, v in self.V.items():
+
+		for v in self.V.values():
 			if v.color == Vertex.WHITE:
 				depth_first_topo( v, '' )
+		
+		if not blank and file_prefix != '':
+			self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, legend=topo_string(topo), blank=blank)
+			self.to_tree()
+
+			self.to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
+
 		return topo
 
 
@@ -306,25 +331,40 @@ class Graph():
 		"""
 		log("Starting DAG shortest path...",3)
 
+		def topo_string(lst):
+			"""
+			Display the content of the topologically sorted list
+			"""
+			if blank:
+				return 'S='
+			return 'Sorted list S=[{}]'.format(', '.join([ v.label for v in lst ]))
+
+
 		s = self.V[start]
 		sorted_vertices = self.topo_sort()
+
 		
 		self.initialize_single_source(s)
 
 		file_number=0
 		if file_prefix != '':
-			file_number+=self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), blank=blank)
+			file_number+=self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=topo_string( sorted_vertices), blank=blank)
 
-		for u in sorted_vertices:
+		while len(sorted_vertices)>0:
+
+			u = sorted_vertices.pop(0)
 			log("-- u={} -- ".format(u.label),3)
+
 			for v in self.Adj[ u ]:
 				self.relax(u, v)
 			u.color=Vertex.BLACK
+
 			if file_prefix != '':
-				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), blank=blank)
-		self.to_tree()
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=topo_string( sorted_vertices), blank=blank)
+				
 
 		if file_prefix!='' and not blank:
+			self.to_tree()
 			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number)) 
 
 
@@ -347,6 +387,11 @@ class Graph():
 		:type s: str
 		"""
 
+		def queue_string(q):
+			if blank:
+				return 'minQ='
+			return 'minQ={}'.format(', '.join([vtx.label for vtx in q ]))
+
 		#log("Starting Dijkstra...")
 		self.initialize_single_source( self.V[s] )
 		S = []
@@ -357,7 +402,7 @@ class Graph():
 
 		if file_prefix!='':
 				file_number += self.to_dot_file( '{}{}'.format(file_prefix, file_number),#
-								legend='minQ={}'.format([ v.label for v in minQueue.list() ]), 
+								legend=queue_string(minQueue),
 								blank=blank)
 		while minQueue.size > 0:
 			u = minQueue.extract_min()
@@ -369,12 +414,12 @@ class Graph():
 
 			if file_prefix!='':
 				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number),#
-								legend='minQ={}'.format([ v.label for v in minQueue.list() ]),
+								legend=queue_string(minQueue),
 								blank=blank)
 		
-		self.to_tree()
 	
 		if not blank and file_prefix != '':
+			self.to_tree()
 			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DIJKSTRA, blank=blank)
 			
 
@@ -462,7 +507,7 @@ class Graph():
 					penwidth=3
 				gs.append( '{}--{}[label="{}", penwidth={}];'.format(u.label, v.label, self.Matrix[u][v] if self.weighted else '', penwidth))
 		if legend != '':
-			gs.append( 'legend[label="{}", color=white];'.format( legend ))
+			gs.append( 'label="{}"'.format( legend ))
 		
 		gs.append( '}')
 

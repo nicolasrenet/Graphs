@@ -1,0 +1,20 @@
+Digraph {
+r [label="r"];
+s [label="s"];
+t [label="t"];
+x [label="x"];
+y [label="y"];
+z [label="z"];
+
+r->s [label="5"];
+r->t [label="3"];
+s->t [label="2"];
+s->x [label="6"];
+t->x [label="7"];
+t->y [label="4"];
+t->z [label="2"];
+x->y [label="-1"];
+x->z [label="1"];
+y->z [label="-2"];
+}
+
