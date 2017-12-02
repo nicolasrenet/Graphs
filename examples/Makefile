@@ -2,7 +2,7 @@
 
 
 
-pdfs = bfs_undirected_classroom.pdf bfs_undirected_classroom_key.pdf bfs_directed_classroom.pdf bfs_directed_classroom_key.pdf clrs_example_bfs.pdf clrs_example_bfs_key.pdf clrs_example_dfs.pdf clrs_example_dfs_key.pdf dfs_directed_classroom.pdf dfs_directed_classroom_key.pdf dfs_undirected_classroom.pdf dfs_undirected_classroom_key.pdf dijkstra_gross_yellen.pdf dijkstra_gross_yellen_key.pdf dag_shortest_path.pdf dag_shortest_path_key.pdf dag_228_key.pdf clrs_24-2.pdf clrs_24-2_key.pdf undirected_graph_homework_bfs_key.pdf undirected_graph_homework_dfs_key.pdf directed_graph_homework_bfs_key.pdf directed_graph_homework_dfs_key.pdf
+pdfs = bfs_undirected_classroom.pdf bfs_undirected_classroom_key.pdf bfs_directed_classroom.pdf bfs_directed_classroom_key.pdf clrs_example_bfs.pdf clrs_example_bfs_key.pdf clrs_example_dfs.pdf clrs_example_dfs_key.pdf dfs_directed_classroom.pdf dfs_directed_classroom_key.pdf dfs_undirected_classroom.pdf dfs_undirected_classroom_key.pdf dijkstra_gross_yellen.pdf dijkstra_gross_yellen_key.pdf dag_shortest_path.pdf dag_shortest_path_key.pdf dag_228_key.pdf clrs_24-2.pdf clrs_24-2_key.pdf undirected_graph_homework_bfs_key.pdf undirected_graph_homework_dfs_key.pdf directed_graph_homework_bfs_key.pdf directed_graph_homework_dfs_key.pdf pert_chart_key.pdf
 
 
 
@@ -59,10 +59,10 @@ dijkstra_gross_yellen_key.tex: %_key.tex : %.dot
 	../alg_to_tex.py -l 3 -s -d "Gross \& Yellen, p.~180" -a dijkstra -v s $< $*_ > $@
 
 dag_shortest_path.tex: %.tex : weighted_dag.dot
-	../alg_to_tex.py -b -l 5 -s -d "Classroom example, directed graph" -a dag-shortest-path -v 's' $< $*_ > $@
+	../alg_to_tex.py -b -l 5 -s -d "DAG Shortest Path, CLRS 24.2, Figure 24.5" -a dag-shortest-path -v 's' $< $*_ > $@
 
 dag_shortest_path_key.tex: %_key.tex : weighted_dag.dot
-	../alg_to_tex.py -l 5 -s -d "Classroom example, directed graph" -a dag-shortest-path -v s $< $*_ > $@ 
+	../alg_to_tex.py -l 5 -s -d "DAG Shortest Path, CLRS 24.2, Figure 24.5" -a dag-shortest-path -v s $< $*_ > $@ 
 
 clrs_24-2.tex: %.tex : weighted_dag.dot
 	../alg_to_tex.py -b -l 4 -s -d "CLRS exercise 24.2-1, weighted DAG" -a dag-shortest-path -v r $< $*_ > $@ 
@@ -82,6 +82,10 @@ directed_graph_homework_bfs_key.tex: %_key.tex : directed_graph_homework.dot
 
 directed_graph_homework_dfs_key.tex: %_key.tex : directed_graph_homework.dot
 	../alg_to_tex.py -l 3 -s -r .25 -d "Homework, directed graph" -a dfs  $< $*_ > $@
+
+
+pert_chart_key.tex: %_key.tex : pert_chart_graph.dot
+	../alg_to_tex.py -l 3 -s -d "PERT chart analysis, classroom example" -a dag-longest-path -v s $< $*_ > $@
 
 clean:
 	rm -f $(pdfs) *.tex

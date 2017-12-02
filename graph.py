@@ -160,14 +160,18 @@ class Graph():
 		self.time = 0
 	
 
-	def breadth_first(self, start, file_prefix='', blank=False ):
-		""" Breadth-First search of the graph
+	def breadth_first(self,source, file_prefix='', blank=False ):
+		""" Breadth-First search of the graph.
 
-		:param start: label or index of the start vertex 
-		:type start: str
+		:param source: label or index of the source vertex 
+		:type source: str
+		:param file_prefix: if provided, the procedure generates .dot diagrams for each step; dot filenames concatenate this prefix with a number suffix.
+		:type file_prefix: str
+		:param blank: if True, the procedure generates only .dot templates for each step; the colors and attributes of the node are not shown.
+		:param blank: bool
 		"""
 		queue = []
-		s = self.V[ start ]
+		s = self.V[source ]
 		s.distance = 0
 		s.color = Vertex.GRAY
 		queue.append( s )
@@ -208,7 +212,12 @@ class Graph():
 			
 
 	def depth_first(self, file_prefix='', blank=False):
-		""" Depth-First search 
+		""" Depth-First search.
+
+		:param file_prefix: if provided, the procedure generates .dot diagrams for each step; dot filenames concatenate this prefix with a number suffix.
+		:type file_prefix: str
+		:param blank: if True, the procedure generates only .dot templates for each step; the colors and attributes of the node are not shown.
+		:param blank: bool
 		"""	
 		#log("Starting DFS...")
 		time = 0
@@ -218,7 +227,6 @@ class Graph():
 			""" Recursive procedure, for depth-first search
 
 			:param u: the vertex under examination
-			:param topo: an array of vertices, to be populated by a topological sort proc.
 			:type u: Vertex
 			"""
 			nonlocal time
@@ -260,7 +268,13 @@ class Graph():
 	
 
 	def topo_sort(self, file_prefix='', blank=False):
-		""" Topological sort: return a topologically sorted list of vertices
+		""" Topological sort: return a topologically sorted list of vertices.
+
+		:param file_prefix: if provided, the procedure generates .dot diagrams for each step; dot filenames concatenate this prefix with a number suffix.
+		:type file_prefix: str
+		:param blank: if True, the procedure generates only .dot templates for each step; the colors and attributes of the node are not shown.
+		:param blank: bool
+		:return: a topologically sorted list of Vertex objects
 		:rtype: list
 		"""	
 		#log("Starting topological sort...")
@@ -276,10 +290,9 @@ class Graph():
 			return 'Sorted list S=[{}]'.format(', '.join([ v.label for v in lst ]))
 
 		def depth_first_topo(u, spacer=''): 
-			""" Recursive procedure, for depth-first search
+			""" Recursive procedure, for depth-first search.
 
 			:param u: the vertex under examination
-			:param topo: an array of vertices, to be populated by a topological sort proc.
 			:type u: Vertex
 			:type topo: list
 			"""
@@ -323,11 +336,15 @@ class Graph():
 		return topo
 
 
-	def dag_shortest_path(self, start, file_prefix='', blank=False):
-		""" DAG Shortest path
+	def dag_shortest_path(self, source, file_prefix='', blank=False):
+		""" DAG Shortest path algorithm.
 
-		:param start: start vertex
-		:type start: str
+		:param source: source vertex
+		:type source: str
+		:param file_prefix: if provided, the procedure generates .dot diagrams for each step; dot filenames concatenate this prefix with a number suffix.
+		:type file_prefix: str
+		:param blank: if True, the procedure generates only .dot templates for each step; the colors and attributes of the node are not shown.
+		:param blank: bool
 		"""
 		log("Starting DAG shortest path...",3)
 
@@ -339,8 +356,7 @@ class Graph():
 				return 'S='
 			return 'Sorted list S=[{}]'.format(', '.join([ v.label for v in lst ]))
 
-
-		s = self.V[start]
+		s = self.V[source]
 		sorted_vertices = self.topo_sort()
 
 		
@@ -369,9 +385,9 @@ class Graph():
 
 
 	def initialize_single_source(self, s):
-		""" Initialize the graph
+		""" Initialize the graph.
 
-		:param s: start vertex
+		:param s: source vertex
 		:type s: Vertex
 		"""
 		for label, v in self.V.items():
@@ -381,10 +397,14 @@ class Graph():
 		s.distance = 0
 
 	def dijkstra(self, s, file_prefix='', blank=False):
-		""" Dijkstra's shortest path algorithm
+		""" Dijkstra's shortest path algorithm.
 
-		:param s: starting vertex (a label)
+		:param s: source vertex (a label)
 		:type s: str
+		:param file_prefix: if provided, the procedure generates .dot diagrams for each step; dot filenames concatenate this prefix with a number suffix.
+		:type file_prefix: str
+		:param blank: if True, the procedure generates only .dot templates for each step; the colors and attributes of the node are not shown.
+		:param blank: bool
 		"""
 
 		def queue_string(q):
@@ -463,10 +483,12 @@ class Graph():
 
 	def to_dot_file(self, filename, walk=Walk.BFS, legend='', blank=False):
 		"""
-		Dum the graph to a dot file.
+		Dump the graph to a dot file.
 		
 		:param filename: the file to be written
 		:type filename: str
+		:param walk: the family of algorithms (DFS or BFS), that determines the information to be displayed with a node label (distances or discovery:finish times)
+		:type walk: Walk
 		:param legend: an optional string to be added to the graph (a caption, or the state of data structure)
 		:type legend: str
 		"""
@@ -480,9 +502,11 @@ class Graph():
 		"""
 		Return a string representation of the graph, in dot format.
 
+		:param walk: the family of algorithms (DFS or BFS), that determines the information to be displayed with a node label (distances or discovery:finish times)
+		:type walk: Walk
 		:param legend: an optional string to be added to the graph (a caption, or the state of data structure)
 		:type legend: str
-		:return: a string-representation of the graph, in DOT (Graphviz) format
+		:return: a string representation of the graph, in DOT (Graphviz) format
 		:rtype: str
 		"""
 		gs = []
@@ -515,7 +539,11 @@ class Graph():
 
 
 	def to_tree(self):
-		"""After DFS or BFS, remove the edges that are not in the resulting  subgraph.
+		"""After DFS or BFS, remove the edges that are not in the resulting subgraph.
+
+		.. todo::
+			The procedure should not modify the graph, but return another graph.
+			
 		"""
 		edges_to_remove=[]
 
@@ -551,15 +579,16 @@ class Graph():
 
 
 	@classmethod
-	def from_dot( cls, dotfile ):
+	def from_dot_to_lists(cls, dotfile):
 		"""
-		Load a graph from a dot file.
+		Load a graph from a dot file, and construct lists of vertices and edges.
 
 		:param dotfile: the name of a graph-definition file, in DOT format.
 		:type dotfile: str
-		:return: a Graph object;  an edge numerical label in the dot file is interpreted as an edge weight.
-		:rtype: Graph
+		:return: a pair: the first element is a list of vertex labels, the second is a list of edges (pairs of labels)
+		:rtype: tuple
 		"""
+		
 		gf = open(dotfile, 'r')
 		
 		directed=False
@@ -602,14 +631,36 @@ class Graph():
 				else:
 					e.append( (v1, v2))
 		gf.close()			
+		return (v, e, directed)
+
+	@classmethod
+	def from_dot( cls, dotfile ):
+		"""
+		Load a graph from a dot file.
+
+		:param dotfile: the name of a graph-definition file, in DOT format.
+		:type dotfile: str
+		:return: a Graph object;  an edge numerical label in the dot file is interpreted as an edge weight.
+		:rtype: Graph
+		"""
 		
 		#sorted_edges = sorted( e, key=lambda x: x[0])
 		#print(sorted_edges)
 
+		v, e, directed = Graph.from_dot_to_lists( dotfile )
+
 		return Graph( v, e, directed )
+
+	def copy(self):
+		"""
+		Return a copy of this graph.
+
+		:return: a graph that has the same vertex set and the same edges.
+		:rtype: Graph
+		"""
+		pass
 		
-
-
+	
 	
 	def __str__(self):
 		output = 'V=['
@@ -623,10 +674,6 @@ class Graph():
 			output += '\n'
 		return output
 
-
-
-
-	
 		
 class GraphUnitTest( unittest.TestCase ):
 
@@ -1098,6 +1145,7 @@ class GraphUnitTest( unittest.TestCase ):
 		)
 		return g
 	
+
 def main():
         unittest.main()
 

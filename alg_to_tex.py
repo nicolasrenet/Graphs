@@ -42,6 +42,10 @@ elif args.algorithm=='dijkstra':
 elif args.algorithm=="dag-shortest-path":
 	g.dag_shortest_path( args.vertex, args.prefix, blank=args.blank)
 	algorithm_str = "DAG Shortest Path"
+elif args.algorithm=="dag-longest-path":
+	g = PERTGraph.from_dot( args.dotfile)
+	g.dag_longest_path( args.vertex, args.prefix, blank=args.blank)
+	algorithm_str = "DAG Longest Path"
 elif args.vertex is not None:
 	g.breadth_first( args.vertex, args.prefix, blank=args.blank )
 	algorithm_str = "Breadth-First Search"
