@@ -2,6 +2,7 @@
 
 import sys
 from graph import *
+import pert_charts as pert
 import os
 import argparse
 
@@ -43,16 +44,17 @@ elif args.algorithm=="dag-shortest-path":
 	g.dag_shortest_path( args.vertex, args.prefix, blank=args.blank)
 	algorithm_str = "DAG Shortest Path"
 elif args.algorithm=="dag-longest-path":
-	g = PERTGraph.from_dot( args.dotfile)
+	g = pert.PERTGraph.from_dot( args.dotfile)
 	g.dag_longest_path( args.vertex, args.prefix, blank=args.blank)
 	algorithm_str = "DAG Longest Path"
 elif args.vertex is not None:
 	g.breadth_first( args.vertex, args.prefix, blank=args.blank )
 	algorithm_str = "Breadth-First Search"
 
-os.system('for i in {}*[0-9].dot; do eps=${{i%.dot}}.eps ; dot -Teps $i > $eps ; done'.format(args.prefix) )
+#os.system('for i in {}*[0-9].dot; do ps=${{i%.dot}}.ps ; dot -Tps:cairo $i > $ps ; done'.format(args.prefix) )
+os.system('for i in {}*[0-9].dot; do pdf=${{i%.dot}}.pdf ; dot -Tpdf $i > $pdf ; done'.format(args.prefix) )
 
-diagrams = list( filter(lambda x: x.startswith(args.prefix) and x.endswith('.eps'),   os.listdir()  ))
+diagrams = list( filter(lambda x: x.startswith(args.prefix) and x.endswith('.pdf'),   os.listdir()  ))
 
 
 preamble = """ \\documentclass{article}
@@ -95,15 +97,16 @@ for d in range(0,len(diagrams)):
 		print('\\vspace{1em}')
 	if d==len(diagrams)-1 and not args.blank:
 		#print('\\HR')
-		print('\\begin{{minipage}}[b][.25\\textheight]{{{}\\linewidth}}'.format(ratio))
-		print('The resulting subgraph: ')
-		print('\\includegraphics[height=.25\\textheight]{{{}}}'.format(diagrams[d] ))	
+		print('\\begin{{minipage}}[b][.35\\textheight]{{{}\\linewidth}}'.format(ratio))
+		print('\\centering The resulting subgraph: ')
+		print('\\vspace{1em}\n')
+		print('\\includegraphics[height=.35\\textheight]{{{}}}'.format(diagrams[d] ))	
 		print('\\end{minipage}')
 	else:
 		if args.linewidth_ratio is not None:
 			print('\\includegraphics[width={}\\linewidth]{{{}}}'.format( args.linewidth_ratio, diagrams[d] ))	
 		else:
-			print('\\includegraphics[height=.3\\textheight]{{{}}}'.format(diagrams[d] ))	
+			print('\\includegraphics[height=.35\\textheight]{{{}}}'.format(diagrams[d] ))	
 if args.standalone:
 	print('\n\\end{document}')
 

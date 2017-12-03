@@ -85,7 +85,7 @@ directed_graph_homework_dfs_key.tex: %_key.tex : directed_graph_homework.dot
 
 
 pert_chart_key.tex: %_key.tex : pert_chart_graph.dot
-	../alg_to_tex.py -l 3 -s -d "PERT chart analysis, classroom example" -a dag-longest-path -v s $< $*_ > $@
+	../alg_to_tex.py -l 5 -s -d "PERT chart analysis, classroom example" -a dag-longest-path -v s $< $*_ > $@
 
 clean:
 	rm -f $(pdfs) *.tex

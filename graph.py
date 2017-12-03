@@ -76,13 +76,21 @@ class Vertex():
 		vs.append('[')
 
 		label_string = self.label
+		font_string = ''
 
 		if walk==Walk.BFS or walk==Walk.DIJKSTRA or walk==Walk.DAGSP:
-			label_string += ':{}'.format( 'INFTY' if self.distance==Vertex.INFTY else self.distance)
+			if self.distance==Vertex.INFTY:
+				label_string += ':&infin;'
+				font_string=' fontname="Symbol"'
+			elif self.distance==-Vertex.INFTY:
+				label_string += ':-&infin;'
+				font_string=' fontname="Symbol"'
+			else:
+				label_string += ':{}'.format(self.distance)
 		elif walk==Walk.DFS:
 			label_string += ':{}:{}'.format( self.discovery if self.discovery else '-', self.finish if self.finish else '-' )
 			
-		vs.append('label="{}"'.format( label_string ))
+		vs.append('label="{}"{}'.format( label_string, font_string ))
 		if self.color == Vertex.BLACK:
 			vs.append( 'fontcolor=white style=filled fontname="time-bold" fillcolor=black')		
 		elif self.color == Vertex.GRAY:
@@ -90,6 +98,27 @@ class Vertex():
 		
 		vs.append('];')
 		return ' '.join(vs)
+	
+	def copy(self):
+		"""
+		Provide a copy of this vertex.
+
+		Note that the parent pointer (if not null) still points to the original vertex's parent after the copy.
+		Its is up the caller function (typically: the Graph's copy function) to update the pointer to the proper node.
+		
+		:return: a copy of this vertex, with its attributes.
+		:rtype: Vertex
+		"""
+		v = Vertex( self.label )
+		v.short_label=v.short_label
+		v.color = self.color
+		v.distance = self.distance
+		# parent pointer still points at the original graph's vertex at time
+		# (transferring the pointer happens when copying the graph itself)
+		v.pi = self.pi
+		v.finish = self.finish
+		return v
+
 
 
 	# overriding the > operator (for comparisons internal to the min-queue)
@@ -186,7 +215,7 @@ class Graph():
 		file_number = 0
 
 		if file_prefix!='':
-				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), legend=queue_string(q), blank=blank)
+				file_number += self.to_dot_file( '{}{}'.format(file_prefix,file_number), legend=queue_string(queue), blank=blank)
 		while queue:
 			u = queue.pop()
 			#print('Popping vertex {} with adjacency list: {}'.format(u.label, self.Adj[u]))
@@ -202,12 +231,11 @@ class Graph():
 			u.color = Vertex.BLACK
 
 			if file_prefix!='':
-				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(q), blank=blank)
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(queue), blank=blank)
 
 
 		if file_prefix!='' and not blank:
-			self.to_tree()
-			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(q))
+			self.get_tree().to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=queue_string(queue))
 
 			
 
@@ -262,9 +290,7 @@ class Graph():
 		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, blank=blank)
 
-			self.to_tree()
-	
-			self.to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
+			self.get_tree().to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
 	
 
 	def topo_sort(self, file_prefix='', blank=False):
@@ -329,9 +355,8 @@ class Graph():
 		
 		if not blank and file_prefix != '':
 			self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, legend=topo_string(topo), blank=blank)
-			self.to_tree()
 
-			self.to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
+			self.get_tree().to_dot_file( '{}{:02}'.format(file_prefix,time+1), Walk.DFS, blank=blank)
 
 		return topo
 
@@ -364,7 +389,7 @@ class Graph():
 
 		file_number=0
 		if file_prefix != '':
-			file_number+=self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=topo_string( sorted_vertices), blank=blank)
+			file_number+=self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DAGSP, legend=topo_string( sorted_vertices), blank=blank)
 
 		while len(sorted_vertices)>0:
 
@@ -376,12 +401,11 @@ class Graph():
 			u.color=Vertex.BLACK
 
 			if file_prefix != '':
-				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), legend=topo_string( sorted_vertices), blank=blank)
+				file_number += self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DAGSP, legend=topo_string( sorted_vertices), blank=blank)
 				
 
 		if file_prefix!='' and not blank:
-			self.to_tree()
-			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number)) 
+			self.get_tree().to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DAGSP) 
 
 
 	def initialize_single_source(self, s):
@@ -410,7 +434,7 @@ class Graph():
 		def queue_string(q):
 			if blank:
 				return 'minQ='
-			return 'minQ={}'.format(', '.join([vtx.label for vtx in q ]))
+			return 'minQ={}'.format(', '.join([vtx.label for vtx in q.list() ]))
 
 		#log("Starting Dijkstra...")
 		self.initialize_single_source( self.V[s] )
@@ -439,8 +463,7 @@ class Graph():
 		
 	
 		if not blank and file_prefix != '':
-			self.to_tree()
-			self.to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DIJKSTRA, blank=blank)
+			self.get_tree().to_dot_file( '{}{:02}'.format(file_prefix,file_number), Walk.DIJKSTRA, blank=blank)
 			
 
 
@@ -541,9 +564,6 @@ class Graph():
 	def to_tree(self):
 		"""After DFS or BFS, remove the edges that are not in the resulting subgraph.
 
-		.. todo::
-			The procedure should not modify the graph, but return another graph.
-			
 		"""
 		edges_to_remove=[]
 
@@ -559,24 +579,11 @@ class Graph():
 		for v in self.V.values():
 			v.color = Vertex.WHITE
 
-	def dijkstra_faulty(self, s):
-		""" Dijkstra's shortest path algorithm """
-
-		log("Starting Dijkstra...")
-		self.initialize_single_source( self.vertex(s) )
-		S = []
-
-		minQueue = MinHeap( self.V.values() )
-		# this will prevent the relax function from decreasing the key in the queue
-		for v in self.V.values(): v.heap = None
-
-		while minQueue.size > 0:
-			u = minQueue.extract_min()
-			log("Extract vertex {} (d={})".format(u.label, u.distance),3)
-			S.append( u )
-			for v_idx in self.Adj[ u.index ]:
-				self.relax( u, self.V[ v_idx ])
-
+	def get_tree(self):
+		
+		g = self.copy()
+		g.to_tree()
+		return g
 
 	@classmethod
 	def from_dot_to_lists(cls, dotfile):
@@ -588,7 +595,19 @@ class Graph():
 		:return: a pair: the first element is a list of vertex labels, the second is a list of edges (pairs of labels)
 		:rtype: tuple
 		"""
+		pass
 		
+
+	@classmethod
+	def from_dot( cls, dotfile ):
+		"""
+		Load a graph from a dot file.
+
+		:param dotfile: the name of a graph-definition file, in DOT format.
+		:type dotfile: str
+		:return: a Graph object;  an edge numerical label in the dot file is interpreted as an edge weight.
+		:rtype: Graph
+		"""
 		gf = open(dotfile, 'r')
 		
 		directed=False
@@ -620,7 +639,7 @@ class Graph():
 				#print(e_match, e_match.lastindex)
 				v1,v2  = e_match.group(1), e_match.group(2)
 				if not directed and v1 > v2:
-					v2,v1 = v1,v2
+						v2,v1 = v1,v2
 				weight=None
 				if e_match.lastindex==3:
 						label_match = label_re.match( e_match.group(3) )
@@ -631,35 +650,40 @@ class Graph():
 				else:
 					e.append( (v1, v2))
 		gf.close()			
-		return (v, e, directed)
 
-	@classmethod
-	def from_dot( cls, dotfile ):
-		"""
-		Load a graph from a dot file.
-
-		:param dotfile: the name of a graph-definition file, in DOT format.
-		:type dotfile: str
-		:return: a Graph object;  an edge numerical label in the dot file is interpreted as an edge weight.
-		:rtype: Graph
-		"""
+		return cls(v, e, directed)
 		
-		#sorted_edges = sorted( e, key=lambda x: x[0])
-		#print(sorted_edges)
-
-		v, e, directed = Graph.from_dot_to_lists( dotfile )
-
-		return Graph( v, e, directed )
 
 	def copy(self):
 		"""
 		Return a copy of this graph.
 
+		The vertex and edge attributes of the new graph are the vertex and edge attributes of the original graph at the time of the copy.
 		:return: a graph that has the same vertex set and the same edges.
 		:rtype: Graph
 		"""
-		pass
-		
+		g = self.__class__( directed=self.directed )
+		for label, vtx in self.V.items():
+			g.V[label]=vtx.copy()
+		# so far, parent pointers still point to the original
+		# vertices: we need to update them
+		for lbl,vtx in g.V.items():
+			if vtx.pi is not None:
+				vtx.pi = g.V[vtx.pi.label]
+			
+
+		for u, l in self.Adj.items():
+			g_u = g.V[u.label]
+			g.Adj[g_u] = [ g.V[v.label] for v in self.Adj[u] ]
+
+		g.Matrix = { v1: { v2: None for v2 in g.V.values() } for v1 in g.V.values() } 
+		for u in self.Matrix.keys():
+			for v in self.Matrix[u]:
+				g_u = g.V[u.label]
+				g_v = g.V[v.label]
+				g.Matrix[g_u][g_v]=self.Matrix[u][v]
+		log(g,3)
+		return g	
 	
 	
 	def __str__(self):
@@ -808,34 +832,6 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual( g.V['e'].pi, g.V['s'])
 		self.assertEqual( g.V['f'].pi, g.V['c'])
 		self.assertEqual( g.V['g'].pi, g.V['a'])
-#
-#	def atest_dijkstra_7(self):
-#		""" Gross & Yellen, p. 180, directed version, faulty queue: designed to fail """
-#		g = self.make_dijkstra_graph_3()
-#		g.dijkstra_faulty( 's' )		
-#
-#		self.assertEqual( g.vertex('s').distance, 0)
-#		self.assertEqual( g.vertex('a').distance, 4)
-#		self.assertEqual( g.vertex('b').distance, 7)
-#		self.assertEqual( g.vertex('c').distance, 7)
-#		self.assertEqual( g.vertex('d').distance, 11)
-#		self.assertEqual( g.vertex('e').distance, 3)
-#		self.assertEqual( g.vertex('f').distance, 9)
-#		self.assertEqual( g.vertex('g').distance, 8)
-#
-#	def atest_dijkstra_8(self):
-#		""" Gross & Yellen, p. 180, directed version, faulty queue: designed to fail """
-#		g = self.make_dijkstra_graph_3()
-#		g.dijkstra_faulty( 's' )		
-#
-#		self.assertEqual( g.vertex('s').pi, None)
-#		self.assertEqual( g.vertex('a').pi, g.vertex('e'))
-#		self.assertEqual( g.vertex('b').pi, g.vertex('s'))
-#		self.assertEqual( g.vertex('c').pi, g.vertex('e'))
-#		self.assertEqual( g.vertex('d').pi, g.vertex('e'))
-#		self.assertEqual( g.vertex('e').pi, g.vertex('s'))
-#		self.assertEqual( g.vertex('f').pi, g.vertex('c'))
-#		self.assertEqual( g.vertex('g').pi, g.vertex('a'))
 
 	def atest_breadth_first_1(self):
 		g = self.make_sample_undirected_graph()
@@ -975,30 +971,23 @@ class GraphUnitTest( unittest.TestCase ):
 		self.assertEqual(g.V['f'].distance, 2)
 		self.assertEqual(g.V['g'].distance, 2)
 		self.assertEqual(g.V['h'].distance, 3)
-#	
+	
 	def atest_graph_creation_1(self):
 		print("Test create undirected graph")
 		
 		g = self.make_sample_undirected_graph()
 
-		#print(g.to_dot())
-#
-#		self.assertEqual( g.Adj, [ [1,2,3], [0,2,4,5], [0,1,3,5],[0,2,4,5,6],[1,3,7],[1,2,3],[3,7],[3,6]] )
-#
 	def atest_graph_creation_2(self):
-#		
+		
 		g = self.make_sample_undirected_graph()
-#		
-#		self.assertEqual( g.Adj, [ [1,2,3], [0,2,4,5], [0,1,3,5],[0,2,4,5,6],[1,3,7],[1,2,3],[3,7],[3,6]] )
-#
+		
 	def atest_graph_creation_3(self):
 		print("Test create directed graph")
-#		
+		
 		g = self.make_sample_digraph()
-		#print(g.to_dot())
-#
-#		self.assertEqual( g.Adj, [ [1,3], [2,4,5], [0,3], [6],[3,7],[2,3],[],[6]])
-#
+
+
+
 	@classmethod
 	def make_sample_undirected_graph(cls):
 		

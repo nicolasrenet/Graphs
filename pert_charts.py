@@ -86,23 +86,6 @@ class PERTGraph ( Graph ):
 		return path
 
 
-	@classmethod
-	def from_dot( cls, dotfile ):
-		"""
-		Load a graph from a dot file.
-
-		:param dotfile: the name of a graph-definition file, in DOT format.
-		:type dotfile: str
-		:return: a Graph object;  an edge numerical label in the dot file is interpreted as an edge weight.
-		:rtype: Graph
-		"""
-		
-		#sorted_edges = sorted( e, key=lambda x: x[0])
-		#print(sorted_edges)
-
-		v, e, directed = Graph.from_dot_to_lists( dotfile )
-
-		return PERTGraph( v, e, directed )
 
 class PERTGraphUnitTest( unittest.TestCase ):
 
