@@ -116,6 +116,7 @@ class Vertex():
 		# parent pointer still points at the original graph's vertex at time
 		# (transferring the pointer happens when copying the graph itself)
 		v.pi = self.pi
+		v.discovery = self.discovery
 		v.finish = self.finish
 		return v
 
