@@ -2,7 +2,7 @@
 
 
 
-pdfs = bfs_undirected_classroom.pdf bfs_undirected_classroom_key.pdf bfs_directed_classroom.pdf bfs_directed_classroom_key.pdf clrs_example_bfs.pdf clrs_example_bfs_key.pdf clrs_example_dfs.pdf clrs_example_dfs_key.pdf dfs_directed_classroom.pdf dfs_directed_classroom_key.pdf dfs_undirected_classroom.pdf dfs_undirected_classroom_key.pdf dijkstra_gross_yellen.pdf dijkstra_gross_yellen_key.pdf dag_shortest_path.pdf dag_shortest_path_key.pdf dag_228_template.pdf dag_228_key.pdf clrs_24-2.pdf clrs_24-2_key.pdf undirected_graph_homework_bfs_key.pdf undirected_graph_homework_dfs_key.pdf directed_graph_homework_bfs_key.pdf directed_graph_homework_dfs_key.pdf pert_chart_template.pdf pert_chart_key.pdf dijkstra_allen_weiss.pdf dijkstra_allen_weiss_key.pdf  dijkstra_clrs_24-6_example.pdf  dijkstra_clrs_24-6_example_key.pdf dijkstra_clrs_24-2_exercise.pdf  dijkstra_clrs_24-2_exercise_key.pdf
+pdfs = bfs_undirected_classroom.pdf bfs_undirected_classroom_key.pdf bfs_directed_classroom.pdf bfs_directed_classroom_key.pdf clrs_example_bfs.pdf clrs_example_bfs_key.pdf clrs_example_dfs.pdf clrs_example_dfs_key.pdf dfs_directed_classroom.pdf dfs_directed_classroom_key.pdf dfs_undirected_classroom.pdf dfs_undirected_classroom_key.pdf dijkstra_gross_yellen.pdf dijkstra_gross_yellen_key.pdf dag_shortest_path.pdf dag_shortest_path_key.pdf dag_228_template.pdf dag_228_key.pdf clrs_24-2.pdf clrs_24-2_key.pdf undirected_graph_homework_bfs_key.pdf undirected_graph_homework_dfs_key.pdf directed_graph_homework_bfs_key.pdf directed_graph_homework_dfs_key.pdf pert_chart_template.pdf pert_chart_key.pdf dijkstra_allen_weiss.pdf dijkstra_allen_weiss_key.pdf  dijkstra_clrs_24-6_example.pdf  dijkstra_clrs_24-6_example_key.pdf dijkstra_clrs_24-2_exercise.pdf  dijkstra_clrs_24-2_exercise_key.pdf graph_space_probe_topo_sort_key.pdf graph_space_probe_project_key.pdf dijkstra_airfares.pdf dijkstra_airfares_key.pdf
 
 
 
@@ -73,10 +73,18 @@ dijkstra_gross_yellen.tex: %.tex : %.dot
 dijkstra_gross_yellen_key.tex: %_key.tex : %.dot
 	../alg_to_tex.py -l 3 -s -d "Gross \& Yellen, p.~180" -a dijkstra -v s $< $*_ > $@
 
+
+dijkstra_airfares.tex: %.tex : %.dot
+	../alg_to_tex.py -b -l 3 -s -d "Final exam Fall 2018" -a dijkstra -v s $< $*_ > $@ 
+
+dijkstra_airfares_key.tex: %_key.tex : %.dot
+	../alg_to_tex.py -l 3 -s -d "Final exam Fall 2018" -a dijkstra -v s $< $*_ > $@
+
+
 dijkstra_allen_weiss.tex: %.tex : dijkstra_allen_weiss.dot
 	../alg_to_tex.py -b -l 3 -s -d 'Mark Allen Weiss, p.~304. Source vertex is $$a$$' -a dijkstra -v a $< $*_ > $@ 
 
-dijkstra_allen_weiss_key.tex: %.tex : dijkstra_allen_weiss.dot
+dijkstra_allen_weiss_key.tex: %_key.tex : dijkstra_allen_weiss.dot
 	../alg_to_tex.py -l 3 -s -d 'Mark Allen Weiss, p.~304. Source vertex is $$a$$' -a dijkstra -v a $< $*_ > $@
 
 dag_shortest_path.tex: %.tex : weighted_dag.dot
@@ -110,6 +118,12 @@ pert_chart_template.tex: %.tex : pert_chart_graph.dot
 
 pert_chart_key.tex: %_key.tex : pert_chart_graph.dot
 	../alg_to_tex.py -l 5 -s -d "PERT chart analysis, classroom example" -a dag-longest-path -v s $< $*_ > $@
+
+graph_space_probe_topo_sort_key.tex: %_key.tex : graph_space_probe_project.dot
+	../alg_to_tex.py -l 2 -s -d "PERT chart analysis, final exam: topological sort" -a topo $< $*_ > $@	
+
+graph_space_probe_project_key.tex: %_key.tex : graph_space_probe_project.dot
+	../alg_to_tex.py -l 2 -s -d "PERT chart analysis, final exam" -a dag-longest-path -v s $< $*_ > $@
 
 clean:
 	rm -f $(pdfs) *.tex

@@ -58,6 +58,11 @@ class Vertex():
 		self.discovery = 0
 		self.finish = 0
 
+		self.coord=(0,0)
+
+	def x(self): return self.coord[0]
+	def y(self): return self.coord[1]
+
 	def to_dot(self, walk=Walk.BFS, blank=False):
 		"""
 		Dot representation of the vertex.
@@ -76,7 +81,7 @@ class Vertex():
 		vs.append('[')
 
 		label_string = self.label
-		font_string = ''
+		font_string = ' fontname="DejaVu Serif"'
 
 		if walk==Walk.BFS or walk==Walk.DIJKSTRA or walk==Walk.DAGSP:
 			if self.distance==Vertex.INFTY:
@@ -98,6 +103,30 @@ class Vertex():
 		
 		vs.append('];')
 		return ' '.join(vs)
+
+	def to_tikz(self, walk=Walk.BFS, blank=False):
+		style='white'
+		if self.color==Vertex.GRAY:
+			style='gray'
+		elif self.color==Vertex.BLACK:
+			style='black'
+			
+		
+		label_string = '${}'.format(self.label)
+
+		if walk==Walk.BFS or walk==Walk.DIJKSTRA or walk==Walk.DAGSP:
+			if self.distance==Vertex.INFTY:
+				label_string += ':\infty$'
+			elif self.distance==-Vertex.INFTY:
+				label_string += ':-\infty$'
+			else:
+				label_string += ':{}$'.format(self.distance)
+		elif walk==Walk.DFS:
+			label_string += ':{}:{}$'.format( self.discovery if self.discovery else '-', self.finish if self.finish else '-' )
+			
+			
+		node_string = "\\node [{}] ({}) at ({},{}) {{{}}};".format(style, self.label, self.x(), self.y(), label_string)
+		return node_string	
 	
 	def copy(self):
 		"""
@@ -332,7 +361,7 @@ class Graph():
 			if file_prefix != '':
 				self.to_dot_file( '{}{:02}'.format(file_prefix,time), Walk.DFS, legend=topo_string(topo),  blank=blank )
 
-			for v in self.Adj[ u ]:
+			for v in sorted( self.Adj[ u ], key=lambda x: x.label):
 				if v.color == Vertex.WHITE:
 					v.pi = u
 					depth_first_topo( v, spacer+'\t' )
@@ -555,7 +584,7 @@ class Graph():
 					penwidth=3
 				gs.append( '{}--{}[label="{}", penwidth={}];'.format(u.label, v.label, self.Matrix[u][v] if self.weighted else '', penwidth))
 		if legend != '':
-			gs.append( 'label="{}"'.format( legend ))
+			gs.append( 'label="{}" fontname="DejaVu Serif"'.format( legend ))
 		
 		gs.append( '}')
 
@@ -686,6 +715,42 @@ class Graph():
 		log(g,3)
 		return g	
 	
+
+	def load_coordinates(self, template):
+		
+		cf = open( template, 'r')	
+
+		width_re = re.compile('^\s*(\d+)\s*$')
+		empty_re = re.compile('^\s*$')
+
+		width = 0
+
+		# array of reversed grid rows
+		grid = []
+		
+		for line in cf:
+			width_match = width_re.match( line )
+			if width_match:
+				width = width_match.group(0)
+			elif not empty_re.match(line):
+				grid.insert(0, line )
+		cf.close()
+			
+
+		print( grid )
+		print(self.V.keys())
+		# reading the grid rows
+		for r in range(0, len(grid)):
+			vertices = [ label.strip() for label in grid[r].split('&') ]
+			print(vertices)
+			for c in range(0,len(vertices)):
+				if vertices[c] != '':
+					self.V[ vertices[c] ].coord = (c, r)
+			
+			
+		
+		
+		
 	
 	def __str__(self):
 		output = 'V=['
@@ -987,6 +1052,32 @@ class GraphUnitTest( unittest.TestCase ):
 		
 		g = self.make_sample_digraph()
 
+	
+	def test_load_from_template(self):
+
+		g = Graph(('m','n','o','p','q','r','s','t','u','v','w','x','y','z'),
+			(('m','q'),('m','r'),('m','x'),('n','o'),('n','q'),('n','u'),('o','r'),('o','s'),('o','v'),
+			('p','o'),('p','s'),('p','z'),('q','t'),('r','u'),('r','y'),('s','r'),('u','t'),('v','w'),('v','x'),
+			('y','v')),
+			directed=True
+		)
+	
+		g.load_coordinates('examples/dag_228_clrs.template')
+
+		self.assertEqual(g.V['m'].coord, (0,3))
+		self.assertEqual(g.V['n'].coord, (2,3))
+		self.assertEqual(g.V['o'].coord, (4,3))
+		self.assertEqual(g.V['p'].coord, (6,3))
+		self.assertEqual(g.V['q'].coord, (1,2))
+		self.assertEqual(g.V['r'].coord, (3,2))
+		self.assertEqual(g.V['s'].coord, (5,2))
+		self.assertEqual(g.V['t'].coord, (0,1))
+		self.assertEqual(g.V['u'].coord, (2,1))
+		self.assertEqual(g.V['v'].coord, (4,1))
+		self.assertEqual(g.V['w'].coord, (6,1))
+		self.assertEqual(g.V['x'].coord, (1,0))
+		self.assertEqual(g.V['y'].coord, (3,0))
+		self.assertEqual(g.V['z'].coord, (5,0))
 
 
 	@classmethod
